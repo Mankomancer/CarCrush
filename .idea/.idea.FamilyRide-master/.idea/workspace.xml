@@ -11,13 +11,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/No_rotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player_movement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Texture_face camera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Wheel_rotate.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Texture_face camera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/No_rotation.cs" />
       </list>
     </option>
   </component>
@@ -57,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696090857316</updated>
       <workItem from="1696090875467" duration="3017000" />
-      <workItem from="1696673685111" duration="606000" />
+      <workItem from="1696673685111" duration="2123000" />
     </task>
     <servers />
   </component>
