@@ -134,7 +134,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &7386323880545443580
 MonoBehaviour:
@@ -148,9 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0cf6b2d29205d4eb8990899453f6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 50
-  jumpForce: 5
-  isOnGround: 1
+  playerSpeed_default: 15
+  playerSpeed: 15
 --- !u!1 &8118241861406424607
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +175,7 @@ Transform:
   m_GameObject: {fileID: 8118241861406424607}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.30999982, y: 3.9600005, z: -20.64}
+  m_LocalPosition: {x: 0, y: 7, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -193,6 +192,7 @@ GameObject:
   - component: {fileID: 7068833739370506184}
   - component: {fileID: 1076613189565501141}
   - component: {fileID: 5398760093154903745}
+  - component: {fileID: 332130719245694416}
   m_Layer: 0
   m_Name: Idle_animation0
   m_TagString: Untagged
@@ -288,3 +288,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &332130719245694416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129759587366954443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca38b5f1f1b03c74cae75f58239d1af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

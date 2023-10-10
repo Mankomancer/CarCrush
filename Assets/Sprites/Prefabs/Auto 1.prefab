@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8085180212773593297}
+  - component: {fileID: 8326288627590833358}
+  - component: {fileID: 3353009687640616703}
   m_Layer: 0
   m_Name: Car_parts
   m_TagString: Untagged
@@ -36,6 +38,30 @@ Transform:
   - {fileID: 887357734965745777}
   m_Father: {fileID: 4401682393655452949}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8326288627590833358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514378436751306578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee940a815c630840882c8328d260ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3353009687640616703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514378436751306578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca38b5f1f1b03c74cae75f58239d1af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3158748426780494915
 GameObject:
   m_ObjectHideFlags: 0
