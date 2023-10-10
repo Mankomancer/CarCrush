@@ -5,17 +5,18 @@ using UnityEngine;
 
 public class Player_movement : MonoBehaviour
 {
-    public float playerSpeed = 30f;
-    public float jumpForce = 5f;
+    public float playerSpeed_default = 15f;
+    public float playerSpeed = 15f;
     private float horizonatInput;
     private float forwardInput;
-    private Rigidbody playerRb;
-    public bool isOnGround = true;
-    
+    private float boostTime;
+    private bool boosting;
+
+   
     // Start is called before the first frame update
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -29,17 +30,23 @@ public class Player_movement : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * forwardInput * playerSpeed);
         transform.Translate(Vector3.right * Time.deltaTime * horizonatInput * playerSpeed);
 
-        //jump for player * Time.deltaTime
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround){
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isOnGround = false;
+        if (boosting){
+            boostTime+=Time.deltaTime;
+            if (boostTime>5){
+                playerSpeed = playerSpeed_default;
+                boosting = false;
+                boostTime = 0;
+            }
         }
 
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("Ground")){
-            isOnGround = true;
+    private void OnTriggerEnter(Collider other) {
+        if (other.tag=="Shop"){
+            boosting = true;
+            playerSpeed = 25f;
         }
     }
+
+
 }
