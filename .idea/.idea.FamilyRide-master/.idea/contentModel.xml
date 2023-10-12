@@ -9,9 +9,14 @@
         <e p="Janis_playground_scripts" t="Include">
           <e p="Camera_sort script.cs" t="Include" />
           <e p="No_rotation.cs" t="Include" />
+          <e p="Score_tester_DoNotUse.cs" t="Include" />
           <e p="Sprite_flip_check_direction.cs" t="Include" />
           <e p="Start_Quit_button.cs" t="Include" />
+          <e p="Static_class" t="Include">
+            <e p="UI_data_keeping.cs" t="Include" />
+          </e>
           <e p="Trashbin_for scripts" t="Include" />
+          <e p="UI_handler.cs" t="Include" />
           <e p="Wheel_rotate.cs" t="Include" />
         </e>
         <e p="Materials" t="Include" />
@@ -21,6 +26,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="BarellScript.cs" t="Include" />
+          <e p="CarSpawner.cs" t="Include" />
           <e p="Player_movement.cs" t="Include" />
           <e p="RandomMovement.cs" t="Include" />
           <e p="Rock_movement.cs" t="Include" />

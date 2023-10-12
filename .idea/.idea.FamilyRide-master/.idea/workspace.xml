@@ -13,9 +13,12 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Sprite_flip_check_direction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/No_rotation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/UI_handler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player_movement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Camera_sort script.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Start_Quit_button.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Score_tester_DoNotUse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Wheel_rotate.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -28,6 +31,9 @@
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Sprite_flip_check_direction.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Start_menu_background_image_animator.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Start_Quit_button.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Score_tester_DoNotUse.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/UI_handler.cs" />
       </list>
     </option>
   </component>
@@ -68,7 +74,7 @@
       <updated>1696090857316</updated>
       <workItem from="1696090875467" duration="3017000" />
       <workItem from="1696673685111" duration="3605000" />
-      <workItem from="1696962069029" duration="3339000" />
+      <workItem from="1696962069029" duration="6271000" />
     </task>
     <servers />
   </component>
