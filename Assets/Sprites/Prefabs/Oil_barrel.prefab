@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6110497460610912779}
   - component: {fileID: 4720994852106845502}
   - component: {fileID: 2914078822834986928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Oil_barrel
   m_TagString: Oil
   m_Icon: {fileID: 0}

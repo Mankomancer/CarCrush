@@ -6,10 +6,22 @@ using UnityEngine.AI;
 public class RandomMovement : MonoBehaviour //stole this from internet
 {
     public NavMeshAgent agent;
-    public float range; //radius of sphere
+    public float rangeVander = 50; //radius of sphere
 
     public Transform centrePoint; //centre of the area the agent wants to move around in
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
+    public bool canSplit = true; //if true, auto can split
+
+
+
+    public Transform oilBarell;
+    public Transform auto;
+
+    public LayerMask whatIsOilBarell, whatIsOtherAuto;
+    public float sightRange = 3f;
+    public bool crashingWithAuto = false;
+    public bool seekingOil = false;
+
 
     void Start()
     {
@@ -19,10 +31,22 @@ public class RandomMovement : MonoBehaviour //stole this from internet
     
     void Update()
     {
+        
+       // crashingWithAuto = Physics.CheckSphere(transform.position, sightRange, whatIsOtherAuto);
+        //seekingOil = Physics.CheckSphere(transform.position, sightRange, whatIsOilBarell);
+        /*
+        if (crashingWithAuto && canSplit) {
+            //CrashAuto();
+        }
+        else if (!canSplit && seekingOil) {
+            //OilSeek();
+        }
+        else 
+        */
         if(agent.remainingDistance <= agent.stoppingDistance) //done with path
         {
             Vector3 point;
-            if (RandomPoint(centrePoint.position, range, out point)) //pass in our centre point and radius of area
+            if (RandomPoint(centrePoint.position, rangeVander, out point)) //pass in our centre point and radius of area
             {
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
                 agent.SetDestination(point);
@@ -33,7 +57,7 @@ public class RandomMovement : MonoBehaviour //stole this from internet
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
 
-        Vector3 randomPoint = center + Random.insideUnitSphere * range; //random point in a sphere 
+        Vector3 randomPoint = center + Random.insideUnitSphere * rangeVander; //random point in a sphere 
         NavMeshHit hit;
         if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas)) //documentation: https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html
         { 
@@ -47,5 +71,11 @@ public class RandomMovement : MonoBehaviour //stole this from internet
         return false;
     }
 
-    
+    public void CrashAuto(){
+
+    }
+
+    public void OilSeek(){
+
+    }
 }

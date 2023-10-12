@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8085180212773593297}
   - component: {fileID: 8326288627590833358}
   - component: {fileID: 3353009687640616703}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Car_parts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 2846885921461031846}
   - component: {fileID: 1906600219731537045}
   - component: {fileID: 9023859982236034542}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Auto disks (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7769064371007392637}
   - component: {fileID: 2505441994564672125}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Auto konturas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887357734965745777}
   - component: {fileID: 2433987351425095299}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Auto_krasa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 3247363468832265173}
   - component: {fileID: 8923350704362980107}
   - component: {fileID: 6060163233681620992}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Auto disks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8926175066419131433}
   - component: {fileID: 879062435552766384}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: lukturi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,9 @@ GameObject:
   - component: {fileID: 4401682393655452949}
   - component: {fileID: 8000044284650067862}
   - component: {fileID: 5065077055084584638}
-  m_Layer: 0
+  - component: {fileID: -3656398982693819862}
+  - component: {fileID: -5137283195704417696}
+  m_Layer: 3
   m_Name: Auto 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +540,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -34.464874, y: 6.4476175, z: -8.8352585}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8085180212773593297}
@@ -592,3 +594,52 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &-3656398982693819862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8402938443148484739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9c303018bfab7498a1e8b7f1f25967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: -5137283195704417696}
+  rangeVander: 50
+  centrePoint: {fileID: 4401682393655452949}
+  canSplit: 1
+  oilBarell: {fileID: 7015920921034666795, guid: 8425a298afdcacd43a2e4c66eb96048f, type: 3}
+  auto: {fileID: 4401682393655452949}
+  whatIsOilBarell:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsOtherAuto:
+    serializedVersion: 2
+    m_Bits: 8
+  sightRange: 3
+  crashingWithAuto: 0
+  seekingOil: 0
+--- !u!195 &-5137283195704417696
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8402938443148484739}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
