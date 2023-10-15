@@ -539,7 +539,7 @@ Transform:
   m_GameObject: {fileID: 8402938443148484739}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.464874, y: 6.4476175, z: -8.8352585}
+  m_LocalPosition: {x: -34.464874, y: 1.3, z: -8.8352585}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -561,7 +561,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -610,17 +610,18 @@ MonoBehaviour:
   rangeVander: 50
   centrePoint: {fileID: 4401682393655452949}
   canSplit: 1
-  oilBarell: {fileID: 7015920921034666795, guid: 8425a298afdcacd43a2e4c66eb96048f, type: 3}
-  auto: {fileID: 4401682393655452949}
-  whatIsOilBarell:
-    serializedVersion: 2
-    m_Bits: 64
-  whatIsOtherAuto:
-    serializedVersion: 2
-    m_Bits: 8
-  sightRange: 3
   crashingWithAuto: 0
   seekingOil: 0
+  allOilObjects: []
+  nearestOilObject: {fileID: 7528988732830275188, guid: 8425a298afdcacd43a2e4c66eb96048f, type: 3}
+  oilDistance: 0
+  nearestOilDistance: 0
+  timeLeft: 5
+  allAutoObjects: []
+  nearestAutoObject: {fileID: 8402938443148484739}
+  autoDistance: 0
+  nearestAutoDistance: 0
+  rangeSmallVander: 15
 --- !u!195 &-5137283195704417696
 NavMeshAgent:
   m_ObjectHideFlags: 0
