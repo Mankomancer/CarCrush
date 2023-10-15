@@ -20,7 +20,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Camera_sort script.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Start_Quit_button.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Score_tester_DoNotUse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Controller_settings/Animation_controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Wheel_rotate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -35,6 +37,7 @@
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/UI_handler.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Start_Quit_button.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Score_tester_DoNotUse.cs" />
+        <option value="$PROJECT_DIR$/Assets/Controller_settings/Animation_controller.cs" />
       </list>
     </option>
   </component>
@@ -77,6 +80,7 @@
       <workItem from="1696673685111" duration="3605000" />
       <workItem from="1696962069029" duration="6271000" />
       <workItem from="1697214297981" duration="6101000" />
+      <workItem from="1697383148925" duration="1383000" />
     </task>
     <servers />
   </component>

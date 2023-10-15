@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 1076613189565501141}
   - component: {fileID: 5398760093154903745}
   - component: {fileID: 332130719245694416}
+  - component: {fileID: 854836148858060672}
   m_Layer: 0
   m_Name: Idle_animation0
   m_TagString: Untagged
@@ -209,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 9129759587366954443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.14, z: 0}
+  m_LocalPosition: {x: 0, y: 1.54, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -277,7 +278,7 @@ Animator:
   m_GameObject: {fileID: 9129759587366954443}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b0ccf859f6ea83a4b901eeebd5bdef5a, type: 2}
+  m_Controller: {fileID: 9100000, guid: ab0b433ee10c0964eba6596584a65303, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -300,3 +301,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca38b5f1f1b03c74cae75f58239d1af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &854836148858060672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129759587366954443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3d261ad05dac44db66cd6507b58c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 2247529388167162109}
+  animator: {fileID: 5398760093154903745}
