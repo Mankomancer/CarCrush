@@ -108,7 +108,7 @@ public class RandomMovement : MonoBehaviour
     }
     
     private void OnTriggerEnter(Collider other) {
-        if (other.tag=="Auto" && canSplit==true && nearestAutoObject.GetComponent<RandomMovement>().canSplit==true){
+        if (other.tag=="Auto" && canSplit==true && nearestAutoObject?.GetComponent<RandomMovement>().canSplit==true){
             canSplit=false;
             nearestAutoObject.GetComponent<RandomMovement>().canSplit=false;
             nearestAutoObject.GetComponent<Transform>().localScale = new Vector3 (0.4f, 0.4f, 0.4f);

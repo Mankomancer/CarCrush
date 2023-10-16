@@ -7,6 +7,8 @@ public class Animation_controller : MonoBehaviour
     public Transform playerTransform;
     private Vector2 playerPreviousPositionX;
     private Vector2 playerCurrentPositionX;
+    private bool state;
+    private bool walk;
     
     public Animator animator;
     // Start is called before the first frame update
@@ -19,10 +21,41 @@ public class Animation_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsWalking())
+       
+      /*  if (IsWalking()&&!ScoreManager.itemSlot)
         {
             ChangeState(1);
-        }else ChangeState(0);
+        }
+        if (IsWalking()&&ScoreManager.itemSlot)
+        {
+            ChangeState(2);
+        }
+
+        if (!IsWalking())
+        {
+            ChangeState(0);
+        }*/
+      walk = IsWalking();
+      if (ScoreManager.itemSlot != null)
+      {
+           state = true; 
+      }else
+      {
+           state = false;
+      }
+      
+      switch (walk, state)
+      {
+          case (true, false):
+              ChangeState(1);
+              break;
+          case (true, true):
+              ChangeState(2);
+              break;
+          case (false, _):
+              ChangeState(0);
+              break;
+      }
     }
 
     void ChangeState(int state)

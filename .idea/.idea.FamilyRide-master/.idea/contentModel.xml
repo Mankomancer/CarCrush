@@ -13,6 +13,8 @@
         <e p="Janis_playground_scripts" t="Include">
           <e p="Camera_sort script.cs" t="Include" />
           <e p="No_rotation.cs" t="Include" />
+          <e p="Object_pick_up.cs" t="Include" />
+          <e p="pick_up_detector.cs" t="Include" />
           <e p="Score_tester_DoNotUse.cs" t="Include" />
           <e p="Sprite_flip_check_direction.cs" t="Include" />
           <e p="Start_Quit_button.cs" t="Include" />

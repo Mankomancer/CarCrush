@@ -2541,11 +2541,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!54 &1169489288 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 586459008779626123, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
-  m_PrefabInstance: {fileID: 5753188451356219374}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1174125724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4450,14 +4445,6 @@ PrefabInstance:
     - target: {fileID: 2247529388167162109, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7386323880545443580, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 1169489288}
-    - target: {fileID: 7386323880545443580, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
-      propertyPath: playerSpeed
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
