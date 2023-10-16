@@ -47,6 +47,7 @@
             <e p="Materials" t="Include" />
           </e>
           <e p="Player_sprite_aniations" t="Include">
+            <e p="Holding_walk_animation" t="Include" />
             <e p="Idle_animation" t="Include" />
             <e p="Materials" t="Include" />
             <e p="oil_rig" t="Include" />

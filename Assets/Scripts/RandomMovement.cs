@@ -99,7 +99,7 @@ public class RandomMovement : MonoBehaviour
         allAutoObjects = GameObject.FindGameObjectsWithTag("Auto");
         for (int i=0; i<allAutoObjects.Length; i++){ 
             autoDistance = Vector3.Distance(this.transform.position, allAutoObjects[i].transform.position);
-            Debug.Log(autoDistance);
+//            Debug.Log(autoDistance);
             if (autoDistance<nearestAutoDistance && autoDistance!=0 && allAutoObjects[i].GetComponent<RandomMovement>().canSplit==true){     
                 nearestAutoObject = allAutoObjects[i];
                 nearestAutoDistance = autoDistance;
