@@ -303,4 +303,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentRock: {fileID: 7754438476670671178}
-  player: {fileID: 0}
+  player: {fileID: 1296903344339567402, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}

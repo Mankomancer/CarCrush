@@ -7,6 +7,8 @@ public class Object_pick_up : MonoBehaviour
 {
     private Input_controlls controlls;
     private bool Action_button;
+    private bool boughtCone = false;
+    private int conePrice = 10;
     [SerializeField] private GameObject item_hold_spot;
 
     private void Awake()
@@ -19,11 +21,17 @@ public class Object_pick_up : MonoBehaviour
 
     public void HandleTrigger(Transform other)
     {
-        if (Action_button && other && ScoreManager.itemSlot == null)
+        if (Action_button && other && ScoreManager.itemSlot == null && other.tag!="Shop")
         {
-            ScoreManager.InsertItem(other.gameObject);
-            ScoreManager.ItemRecall()?.transform.SetParent(item_hold_spot.transform);
-            ScoreManager.ItemRecall().transform.localPosition = new Vector3(0,0,0.1f);
+            if (other.tag=="Cone" && !boughtCone && ScoreManager.GetScore()>=conePrice){ //buying cone
+                ScoreManager.AddScore(conePrice);
+                boughtCone = true;
+            }
+            if (other.tag!="Cone" || boughtCone){
+                ScoreManager.InsertItem(other.gameObject);
+                ScoreManager.ItemRecall()?.transform.SetParent(item_hold_spot.transform);
+                ScoreManager.ItemRecall().transform.localPosition = new Vector3(0,0,0.1f);
+            }
         }
     }
 
@@ -38,7 +46,7 @@ public class Object_pick_up : MonoBehaviour
             Action_button = true;
             return;
         }
-        ReleaseItem();
+        ReleaseItem();  //maybe, need to decrese height of item released, otherwise they tend to hover
     }
 
     void ReleaseItem()

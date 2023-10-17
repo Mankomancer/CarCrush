@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: -3656398982693819862}
   - component: {fileID: -5137283195704417696}
   m_Layer: 3
-  m_Name: Auto 1
+  m_Name: Auto
   m_TagString: Auto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -539,8 +539,8 @@ Transform:
   m_GameObject: {fileID: 8402938443148484739}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.464874, y: 1.3, z: -8.8352585}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalPosition: {x: -34.464874, y: 1, z: -8.8352585}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8085180212773593297}
@@ -607,9 +607,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: -5137283195704417696}
+  autoPrefab: {fileID: 8402938443148484739}
   rangeVander: 50
   centrePoint: {fileID: 4401682393655452949}
-  canSplit: 1
+  canSplit: 0
   crashingWithAuto: 0
   seekingOil: 0
   allOilObjects: []

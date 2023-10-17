@@ -8,6 +8,7 @@ TagManager:
   - Shop
   - Oil
   - Auto
+  - Cone
   layers:
   - Default
   - TransparentFX

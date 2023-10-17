@@ -32,9 +32,6 @@ public class Player_movement : MonoBehaviour
         forwardInput = Input.GetAxis("Vertical");
         newDirection =new Vector3(horizonatInput,0,forwardInput);
         Movement_With_Limits(newDirection, playerSpeed);
-       //move player character
-     // transform.Translate(Vector3.forward * Time.deltaTime * forwardInput * playerSpeed);
-     // transform.Translate(Vector3.right * Time.deltaTime * horizonatInput * playerSpeed);
 
         if (boosting){
             boostTime+=Time.deltaTime;

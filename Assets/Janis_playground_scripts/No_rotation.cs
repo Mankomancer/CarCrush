@@ -10,7 +10,7 @@ public class No_rotation : MonoBehaviour
 // Start is called before the first frame update
     void Start()
     {
-        start_position = transform.rotation;
+        start_position = UnityEngine.Quaternion.Euler(0,0,0);
     }
 
 // Update is called once per frame

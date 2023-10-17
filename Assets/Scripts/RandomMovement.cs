@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,6 +9,8 @@ using UnityEngine.AI;
 public class RandomMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
+    
+    public GameObject autoPrefab;
     public float rangeVander = 50; //radius of sphere
 
     public Transform centrePoint; //centre of the area the agent wants to move around in
@@ -32,6 +35,7 @@ public class RandomMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        transform.rotation = UnityEngine.Quaternion.Euler(0,0,0);
     }
 
     
@@ -56,19 +60,19 @@ public class RandomMovement : MonoBehaviour
         }
         else if(agent.remainingDistance <= agent.stoppingDistance) //done with path             stole this implementation from internet
         {
-            Vector3 point;
+            UnityEngine.Vector3 point;
             if (RandomPoint(centrePoint.position, rangeVander, out point)) //pass in our centre point and radius of area
             {
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
+                Debug.DrawRay(point, UnityEngine.Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
                 agent.ResetPath();
                 agent.SetDestination(point);
             }
         }
 
     }
-    bool RandomPoint(Vector3 center, float range, out Vector3 result)
+    bool RandomPoint(UnityEngine.Vector3 center, float range, out UnityEngine.Vector3 result)
     {
-        Vector3 randomPoint = center + UnityEngine.Random.insideUnitSphere * rangeVander; //random point in a sphere 
+        UnityEngine.Vector3 randomPoint = center + UnityEngine.Random.insideUnitSphere * rangeVander; //random point in a sphere 
         NavMeshHit hit;
         if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas)) //documentation: https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html
         { 
@@ -78,7 +82,7 @@ public class RandomMovement : MonoBehaviour
             return true;
         }
 
-        result = Vector3.zero;
+        result = UnityEngine.Vector3.zero;
         return false;
     }
 
@@ -89,7 +93,7 @@ public class RandomMovement : MonoBehaviour
         nearestOilDistance = 100f;
         allOilObjects = GameObject.FindGameObjectsWithTag("Oil");   //yes, i know this is not efficient, but should be fine. There will never be situation when there are too many barrels or autos.
         for (int i=0; i<allOilObjects.Length; i++){
-            oilDistance = Vector3.Distance(this.transform.position, allOilObjects[i].transform.position);
+            oilDistance = UnityEngine.Vector3.Distance(this.transform.position, allOilObjects[i].transform.position);
             if (oilDistance<nearestOilDistance){
                 nearestOilObject = allOilObjects[i];
                 nearestOilDistance = oilDistance;
@@ -98,8 +102,7 @@ public class RandomMovement : MonoBehaviour
             
         allAutoObjects = GameObject.FindGameObjectsWithTag("Auto");
         for (int i=0; i<allAutoObjects.Length; i++){ 
-            autoDistance = Vector3.Distance(this.transform.position, allAutoObjects[i].transform.position);
-//            Debug.Log(autoDistance);
+            autoDistance = UnityEngine.Vector3.Distance(this.transform.position, allAutoObjects[i].transform.position);
             if (autoDistance<nearestAutoDistance && autoDistance!=0 && allAutoObjects[i].GetComponent<RandomMovement>().canSplit==true){     
                 nearestAutoObject = allAutoObjects[i];
                 nearestAutoDistance = autoDistance;
@@ -108,22 +111,25 @@ public class RandomMovement : MonoBehaviour
     }
     
     private void OnTriggerEnter(Collider other) {
-        if (other.tag=="Auto" && canSplit==true && nearestAutoObject?.GetComponent<RandomMovement>().canSplit==true){
-            canSplit=false;
-            nearestAutoObject.GetComponent<RandomMovement>().canSplit=false;
-            nearestAutoObject.GetComponent<Transform>().localScale = new Vector3 (0.4f, 0.4f, 0.4f);
-            this.transform.localScale = new Vector3 (0.4f, 0.4f, 0.4f);
-            nearestAutoObject = null;
-            //create only 1 new car, not sure how to implement it, so it doesnt trigger 2 times :/
+        if (other.tag=="Auto" && canSplit && nearestAutoObject!=null){
+            if (nearestAutoObject.GetComponent<RandomMovement>().canSplit==true){
+                canSplit=false;
+                nearestAutoObject.GetComponent<RandomMovement>().canSplit=false;
+                nearestAutoObject.GetComponent<Transform>().localScale = new UnityEngine.Vector3 (0.5f, 0.5f, 0.5f);
+                this.transform.localScale = new UnityEngine.Vector3 (0.5f, 0.5f, 0.5f);
+                nearestAutoObject = null;
+                UnityEngine.Vector3 carSpawn = new UnityEngine.Vector3(this.transform.position.x+0.2f, 1f, this.transform.position.z);
+                Instantiate (autoPrefab, carSpawn, UnityEngine.Quaternion.identity);
+            }
         }
 
-        if (other.tag=="Oil" && canSplit==false){
+        if (other.tag=="Oil" && !canSplit){
             Destroy(other.gameObject);
             nearestOilObject = null;
             canSplit = true;
             seekingOil = false;
-
-            this.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
+            this.transform.localScale = new UnityEngine.Vector3 (0.8f, 0.8f, 0.8f);
+            
         }
     }
 
