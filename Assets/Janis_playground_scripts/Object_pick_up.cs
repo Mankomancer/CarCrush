@@ -10,6 +10,7 @@ public class Object_pick_up : MonoBehaviour
     private bool boughtCone = false;
     private int conePrice = 10;
     [SerializeField] private GameObject item_hold_spot;
+    [SerializeField] public GameObject shopObject;
 
     private void Awake()
     {
@@ -23,11 +24,11 @@ public class Object_pick_up : MonoBehaviour
     {
         if (Action_button && other && ScoreManager.itemSlot == null && other.tag!="Shop")
         {
-            if (other.tag=="Cone" && !boughtCone && ScoreManager.GetScore()>=conePrice){ //buying cone
-                ScoreManager.AddScore(conePrice);
+            if (other.tag=="Cone" && !boughtCone && shopObject.GetComponent<Shop_script>().money>=conePrice){ //buying cone
+                shopObject.GetComponent<Shop_script>().money-=conePrice;
                 boughtCone = true;
             }
-            if (other.tag!="Cone" || boughtCone){
+            if (other.tag!="Cone" || boughtCone){   //in case player already bought cone, but dropped it somewhere else
                 ScoreManager.InsertItem(other.gameObject);
                 ScoreManager.ItemRecall()?.transform.SetParent(item_hold_spot.transform);
                 ScoreManager.ItemRecall().transform.localPosition = new Vector3(0,0,0.1f);
