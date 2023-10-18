@@ -13,7 +13,7 @@ public class Sprite_flip_check_direction : MonoBehaviour
     void Start()
     {
         playerTransform = GetComponent<Transform>();
-        x_scale_positive = playerTransform.localScale.x;
+        x_scale_positive = Mathf.Abs(playerTransform.localScale.x);
         playerPreviousPositionX = playerTransform.position.x;
         playerCurrentPositionX = playerTransform.position.x;
     }

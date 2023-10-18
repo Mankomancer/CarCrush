@@ -2384,6 +2384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 955766505}
+  - component: {fileID: 955766506}
   m_Layer: 5
   m_Name: Item_slot
   m_TagString: Untagged
@@ -2412,6 +2413,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -451.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &955766506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955766504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d667365543f21cf4182e491d64443b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlot: {fileID: 697391684}
+  representative_images:
+  - {fileID: 21300000, guid: 00d3cf9ae2fb2be478df77d73d6abec2, type: 3}
+  - {fileID: 21300000, guid: a1099fe886f14ab49920b373e795d229, type: 3}
+  - {fileID: 21300000, guid: daa123a9c6c723b4cb8a49676303451b, type: 3}
 --- !u!1 &969382668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,6 +3004,8 @@ MonoBehaviour:
   timeLeft: 3
   spawnTimer: 10
   barrelScore: 20
+  barrelCost: 20
+  shopObject: {fileID: 0}
 --- !u!1001 &1330397311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3704,7 +3724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6055534435019941853, guid: 2894c651cbb18914a9983726e53a0c79, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9174755709832155106, guid: 2894c651cbb18914a9983726e53a0c79, type: 3}
       propertyPath: m_Name

@@ -32,7 +32,7 @@ public class BarellScript : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.tag=="Shop"){ //in case if barrel spawns in shop, delete it and make new one
             ScoreManager.AddScore(barrelScore);
-            shopObject.GetComponent<Shop_script>().money+=barrelCost;
+            ScoreManager.AddMoney(barrelCost);
             timeLeft = -1;
             Destroy(this.gameObject);
         }

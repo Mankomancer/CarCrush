@@ -110,9 +110,13 @@ public class RandomMovement : MonoBehaviour
         }
     }
     
-    private void OnTriggerEnter(Collider other) {
-        if (other.tag=="Auto" && canSplit && nearestAutoObject!=null){
-            if (nearestAutoObject.GetComponent<RandomMovement>().canSplit==true){
+   // private void OnTriggerEnter(Collider other)
+    public void HandleTrigger(Collider other)
+    {
+        if (other?.transform?.parent?.gameObject.tag=="Auto" && canSplit && nearestAutoObject!=null)
+        {
+            if (nearestAutoObject.GetComponent<RandomMovement>().canSplit==true)
+            {
                 canSplit=false;
                 nearestAutoObject.GetComponent<RandomMovement>().canSplit=false;
                 nearestAutoObject.GetComponent<Transform>().localScale = new UnityEngine.Vector3 (0.5f, 0.5f, 0.5f);

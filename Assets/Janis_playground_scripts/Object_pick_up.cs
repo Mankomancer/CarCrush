@@ -9,6 +9,7 @@ public class Object_pick_up : MonoBehaviour
     private bool Action_button;
     private bool boughtCone = false;
     private int conePrice = 10;
+    private GameObject hold_object; // salabo negative scale varning, tika izmantota nepareiza metode nest objektus
     [SerializeField] private GameObject item_hold_spot;
     [SerializeField] public GameObject shopObject;
 
@@ -20,18 +21,36 @@ public class Object_pick_up : MonoBehaviour
         controlls.Gameplay.Action.canceled += ctx =>Action_Release();
     }
 
-    public void HandleTrigger(Transform other)
+    private void Update()
     {
+        if (hold_object)
+        {//objekta nešanas funkcija
+            hold_object.transform.position = new Vector3(item_hold_spot.transform.position.x,hold_object.transform.position.y,item_hold_spot.transform.position.z);
+        }
+    }
+
+    public void HandleTrigger(Collider other)
+    {
+        Rigidbody otherRigidbody = other.attachedRigidbody;
+        
         if (Action_button && other && ScoreManager.itemSlot == null && other.tag!="Shop")
         {
-            if (other.tag=="Cone" && !boughtCone && shopObject.GetComponent<Shop_script>().money>=conePrice){ //buying cone
-                shopObject.GetComponent<Shop_script>().money-=conePrice;
+            if (other.tag=="Cone" && !boughtCone && ScoreManager.GetMoney()>=conePrice){ //buying cone
+                ScoreManager.DecimateMoney(conePrice);
                 boughtCone = true;
             }
-            if (other.tag!="Cone" || boughtCone){   //in case player already bought cone, but dropped it somewhere else
-                ScoreManager.InsertItem(other.gameObject);
-                ScoreManager.ItemRecall()?.transform.SetParent(item_hold_spot.transform);
-                ScoreManager.ItemRecall().transform.localPosition = new Vector3(0,0,0.1f);
+            if (other.tag!="Cone" || boughtCone)
+            {   //in case player already bought cone, but dropped it somewhere else
+                if (otherRigidbody != null)
+                {
+                    ScoreManager.InsertItem(other.transform.parent.gameObject);
+                }
+                else
+                {
+                    ScoreManager.InsertItem(other.gameObject);
+                }
+
+                hold_object = ScoreManager.ItemRecall();
             }
         }
     }
@@ -52,7 +71,8 @@ public class Object_pick_up : MonoBehaviour
 
     void ReleaseItem()
     {
-        ScoreManager.ItemRecall().transform.parent = null;
+        hold_object = null;
+       // ScoreManager.ItemRecall().transform.parent = null;
         ScoreManager.DropItem();
     }
     private void OnEnable()
