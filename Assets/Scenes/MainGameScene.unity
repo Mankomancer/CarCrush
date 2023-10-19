@@ -496,6 +496,13 @@ MonoBehaviour:
   moneyText: {fileID: 2097017739}
   doomsDayClock: {fileID: 370735302}
   howLongYouSurvived: {fileID: 212789242}
+  aliveTime: {x: 0, y: 0}
+  doomsDayTime: {x: 0, y: 0}
+  minScale: 0.8
+  maxScale: 1.2
+  speed: 1
+  color1: {r: 1, g: 1, b: 1, a: 1}
+  color2: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &212789241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,10 +1621,6 @@ PrefabInstance:
     - target: {fileID: 8402938443148484739, guid: 2b2bfc97e4c6a13458e19d7f6417561d, type: 3}
       propertyPath: m_Name
       value: Auto_4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8402938443148484739, guid: 2b2bfc97e4c6a13458e19d7f6417561d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3440,7 +3443,7 @@ MonoBehaviour:
   parentObject: {fileID: 682345119}
   barellPrefab: {fileID: 7528988732830275188, guid: 8425a298afdcacd43a2e4c66eb96048f, type: 3}
   timeLeft: 3
-  spawnTimer: 10
+  spawnTimer: 0.1
 --- !u!82 &1317434233
 AudioSource:
   m_ObjectHideFlags: 0

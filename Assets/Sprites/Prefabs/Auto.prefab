@@ -678,6 +678,10 @@ MonoBehaviour:
   autoDistance: 0
   nearestAutoDistance: 0
   rangeSmallVander: 15
+  minX: -49
+  maxX: 49
+  minZ: -49
+  maxZ: 49
 --- !u!195 &-5137283195704417696
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -687,7 +691,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8402938443148484739}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.1
+  m_Radius: 0.2
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 3
