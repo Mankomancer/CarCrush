@@ -45,13 +45,13 @@
         <option value="$PROJECT_DIR$/Assets/Controller_settings/Animation_controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/pick_up_detector.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_colider_rotation_fix.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shop_script.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BarellScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Object_pick_up.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Sprite_flip_check_direction.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/item_slot_image.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shop_script.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BarellScript.cs" />
       </list>
     </option>
   </component>
@@ -95,7 +95,7 @@
       <workItem from="1696962069029" duration="6271000" />
       <workItem from="1697214297981" duration="6101000" />
       <workItem from="1697383148925" duration="15433000" />
-      <workItem from="1697646925613" duration="10451000" />
+      <workItem from="1697646925613" duration="19109000" />
     </task>
     <servers />
   </component>

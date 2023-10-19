@@ -9,6 +9,7 @@ TagManager:
   - Oil
   - Auto
   - Cone
+  - OilSpawner
   layers:
   - Default
   - TransparentFX

@@ -26,7 +26,8 @@ public class Shop_script : MonoBehaviour
       
     }
 
-    private void OnTriggerEnter(Collider other){//this will randomly give player score, if barell will spawn in market :/ need to thing about fix
+    private void OnTriggerEnter(Collider other)//this will randomly give player score, if barell will spawn in market :/ need to thing about fix
+    {
         if (other?.tag=="Shop"){
             ScoreManager.AddScore(barrelScore);
             ScoreManager.AddMoney(barrelCost);

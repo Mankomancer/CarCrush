@@ -8,26 +8,28 @@ using UnityEngine.AI;
 
 public class RandomMovement : MonoBehaviour
 {
-    public NavMeshAgent agent;
     
+    public NavMeshAgent agent;
+
+    [SerializeField] private GameObject parentObject; //objektu organizēšanai
     public GameObject autoPrefab;
-    public float rangeVander = 50; //radius of sphere
+   // public GameObject[] allOilObjects;
+    public GameObject nearestOilObject;
+   // public GameObject[] allAutoObjects;
+    public GameObject nearestAutoObject;
 
     public Transform centrePoint; //centre of the area the agent wants to move around in
+
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
     public bool canSplit = false; //if true, auto can split
-
     public bool crashingWithAuto = false;
     public bool seekingOil = false;
 
     //need these for navigation for specific auto, barell
-    public GameObject[] allOilObjects;
-    public GameObject nearestOilObject;
+    public float rangeVander = 50; //radius of sphere
     public float oilDistance;
     public float nearestOilDistance = 100f;
     public float timeLeft = 0;
-    public GameObject[] allAutoObjects;
-    public GameObject nearestAutoObject;
     public float autoDistance;
     public float nearestAutoDistance = 100f;
     public float rangeSmallVander = 15f;
@@ -37,6 +39,8 @@ public class RandomMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         transform.rotation = UnityEngine.Quaternion.Euler(0,0,0);
         nearestAutoObject = null;
+        FirstTimeItemAddToList("Oil",ScoreManager.allOilObjects);
+        FirstTimeItemAddToList("Auto",ScoreManager.allAutoObjects);
     }
 
     
@@ -71,6 +75,8 @@ public class RandomMovement : MonoBehaviour
         }
 
     }
+    
+    
     bool RandomPoint(UnityEngine.Vector3 center, float range, out UnityEngine.Vector3 result)
     {
         UnityEngine.Vector3 randomPoint = center + UnityEngine.Random.insideUnitSphere * rangeVander; //random point in a sphere 
@@ -86,32 +92,37 @@ public class RandomMovement : MonoBehaviour
         result = UnityEngine.Vector3.zero;
         return false;
     }
+    
 
-    private void ObjectFinder(){
+    private void ObjectFinder()
+    {
         seekingOil = false; //needed in case if someone else already took the oil or car crash already happened
         crashingWithAuto = false;
         nearestAutoDistance = 100f;  //random value given. needed so no info from previous runs doesnt get saved (usually in case of single car or no oil)
         nearestOilDistance = 100f;
-        allOilObjects = GameObject.FindGameObjectsWithTag("Oil");   //yes, i know this is not efficient, but should be fine. There will never be situation when there are too many barrels or autos.
-        for (int i=0; i<allOilObjects.Length; i++){
-            oilDistance = UnityEngine.Vector3.Distance(this.transform.position, allOilObjects[i].transform.position);
-            if (oilDistance<nearestOilDistance){
-                nearestOilObject = allOilObjects[i];
+      //  allOilObjects = GameObject.FindGameObjectsWithTag("Oil");   //yes, i know this is not efficient, but should be fine. There will never be situation when there are too many barrels or autos.
+        for (int i=0; i<ScoreManager.allOilObjects?.Count; i++)
+        {
+            oilDistance = UnityEngine.Vector3.Distance(this.transform.position, ScoreManager.allOilObjects[i].transform.position);
+            if (oilDistance<nearestOilDistance)
+            {
+                nearestOilObject = ScoreManager.allOilObjects[i];
                 nearestOilDistance = oilDistance;
             }
         }
             
-        allAutoObjects = GameObject.FindGameObjectsWithTag("Auto");
-        for (int i=0; i<allAutoObjects.Length; i++){ 
-            autoDistance = UnityEngine.Vector3.Distance(this.transform.position, allAutoObjects[i].transform.position);
-            if (autoDistance<nearestAutoDistance && autoDistance!=0 && allAutoObjects[i].GetComponent<RandomMovement>().canSplit==true){     
-                nearestAutoObject = allAutoObjects[i];
+       // allAutoObjects = GameObject.FindGameObjectsWithTag("Auto");
+        for (int i=0; i<ScoreManager.allAutoObjects?.Count; i++)
+        { 
+            autoDistance = UnityEngine.Vector3.Distance(this.transform.position, ScoreManager.allAutoObjects[i].transform.position);
+            if (autoDistance<nearestAutoDistance && autoDistance!=0 && ScoreManager.allAutoObjects[i].GetComponent<RandomMovement>().canSplit==true)
+            {     
+                nearestAutoObject = ScoreManager.allAutoObjects[i];
                 nearestAutoDistance = autoDistance;
             }
         }
     }
     
-   // private void OnTriggerEnter(Collider other)
     public void HandleTrigger(Collider other)
     {
         if (other?.transform?.parent?.gameObject.tag=="Auto" && canSplit && nearestAutoObject!=null)
@@ -124,11 +135,15 @@ public class RandomMovement : MonoBehaviour
                 this.transform.localScale = new UnityEngine.Vector3 (0.5f, 0.5f, 0.5f);
                 nearestAutoObject = null;
                 UnityEngine.Vector3 carSpawn = new UnityEngine.Vector3(this.transform.position.x+0.2f, 1f, this.transform.position.z);
-                Instantiate (autoPrefab, carSpawn, UnityEngine.Quaternion.identity);
+                GameObject spawn ;
+                spawn = Instantiate (autoPrefab, carSpawn, UnityEngine.Quaternion.identity,parentObject.transform);
+                ScoreManager.allAutoObjects.Add(spawn); // adds newly spawned car to a list
             }
         }
 
-        if (other.tag=="Oil" && !canSplit){
+        if (other.tag=="Oil" && !canSplit)
+        {
+            ScoreManager.allOilObjects.Remove(other.gameObject);
             Destroy(other.gameObject);
             nearestOilObject = null;
             canSplit = true;
@@ -136,6 +151,22 @@ public class RandomMovement : MonoBehaviour
             this.transform.localScale = new UnityEngine.Vector3 (0.8f, 0.8f, 0.8f);
             ObjectFinder();
             timeLeft = 4;
+        }
+    }
+
+    private void FirstTimeItemAddToList(string tag,List<GameObject> list)
+    {
+        GameObject[] foundObjects = GameObject.FindGameObjectsWithTag(tag);
+        foreach (GameObject foundObject in foundObjects)
+        {
+            //double checks so same object is not added multiple times
+            if (!list.Contains(foundObject))
+            {    
+                // Add each object to the list
+                list.Add(foundObject);
+            }
+            
+            
         }
     }
 

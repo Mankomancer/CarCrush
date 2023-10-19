@@ -22,7 +22,7 @@ public class item_slot_image : MonoBehaviour
 
     private void SlotImageChanger()
     {
-        if (ScoreManager.ItemRecall()==null)
+        if (ScoreManager.ItemRecall()is null)
         {
             itemSlot.sprite = null;
             itemSlot.color = Color.clear;

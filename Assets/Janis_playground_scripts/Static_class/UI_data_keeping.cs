@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class ScoreManager
@@ -6,6 +7,9 @@ public static class ScoreManager
     private static int score = 0;
     private static int money = 0;
     public static GameObject itemSlot ;
+    public static List<GameObject> allAutoObjects = new List<GameObject>();
+    public static List<GameObject> allOilObjects = new List<GameObject>();
+
 
     // This is a static method that adds points to the score
     public static void AddScore(int points)
