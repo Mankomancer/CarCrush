@@ -4,8 +4,10 @@ using UnityEngine;
 public static class ScoreManager
 {
     // This is a static variable that stores the score
-    private static int score = 0;
-    private static int money = 0;
+    public static float howLongYouSurvived = 0;
+    public static float doomsDayTimer =0;
+    public static int score = 0;
+    public static int money = 0;
     public static GameObject itemSlot ;
     public static List<GameObject> allAutoObjects = new List<GameObject>();
     public static List<GameObject> allOilObjects = new List<GameObject>();
@@ -26,10 +28,6 @@ public static class ScoreManager
     {
         score = 0;
     }
-    public static int GetScore()
-    {
-        return score;
-    }
 
     public static void AddMoney(int points)
     {
@@ -44,10 +42,6 @@ public static class ScoreManager
     public static void ResetMoney()
     {
         money = 0;
-    }
-    public static int GetMoney()
-    {
-        return money;
     }
     public static void InsertItem(GameObject item)
     {

@@ -36,13 +36,13 @@ public class CarSpawner : MonoBehaviour
     }
 
     public void SpawnerTimeUpdater(){
-        if (ScoreManager.GetScore()>=100){
+        if (ScoreManager.score>=100){
             spawnTimer = 6;
         }
-        else if (ScoreManager.GetScore()>=200){
+        else if (ScoreManager.score>=200){
             spawnTimer = 7;
         }
-        else if (ScoreManager.GetScore()>=300){
+        else if (ScoreManager.score>=300){
             spawnTimer = 8;
         }
     }

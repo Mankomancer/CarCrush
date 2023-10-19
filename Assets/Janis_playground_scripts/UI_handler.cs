@@ -5,8 +5,9 @@ using TMPro; // Include the namespace for TextMesh Pro
 
 public class UI_handler : MonoBehaviour
 {
-    public TMP_Text ScoreText; // Declare a public variable for the text component
-    // Start is called before the first frame update
+    public TMP_Text moneyText;
+    public TMP_Text doomsDayClock;
+    public TMP_Text howLongYouSurvived;
     void Start()
     {
         
@@ -15,6 +16,13 @@ public class UI_handler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScoreText.text = ScoreManager.GetScore().ToString();
+        TextUpdater();
+    }
+
+    private void TextUpdater()
+    {
+        moneyText.text = ScoreManager.money.ToString();
+        howLongYouSurvived.text = ScoreManager.howLongYouSurvived.ToString();
+        doomsDayClock.text = ScoreManager.doomsDayTimer.ToString();
     }
 }

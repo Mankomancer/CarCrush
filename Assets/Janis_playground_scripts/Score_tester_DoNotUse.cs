@@ -19,7 +19,7 @@ public class Score_tester_DoNotUse : MonoBehaviour
     }
     void Start()
     {
-        score = ScoreManager.GetScore();
+        score = ScoreManager.score;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class Score_tester_DoNotUse : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            score = ScoreManager.GetScore();
+            score = ScoreManager.score;
             Debug.Log(score);
         }
 

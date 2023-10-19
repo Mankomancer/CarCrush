@@ -34,22 +34,22 @@ public class BarellScript : MonoBehaviour
 
      public void SpawnerTimeUpdater()
     {
-        if (ScoreManager.GetScore()>=100 && ScoreManager.GetScore()<200){
+        if (ScoreManager.score>=100 && ScoreManager.score<200){
             spawnTimer = 8;
         }
-        else if (ScoreManager.GetScore()>=200 && ScoreManager.GetScore()<300){
+        else if (ScoreManager.score>=200 && ScoreManager.score<300){
             spawnTimer = 7;
         }
-        else if (ScoreManager.GetScore()>=300 && ScoreManager.GetScore()<500){
+        else if (ScoreManager.score>=300 && ScoreManager.score<500){
             spawnTimer = 6;
         }
-        else if (ScoreManager.GetScore()>=500 && ScoreManager.GetScore()<700){
+        else if (ScoreManager.score>=500 && ScoreManager.score<700){
             spawnTimer = 5;
         }
-        else if (ScoreManager.GetScore()>=700 && ScoreManager.GetScore()<1000){
+        else if (ScoreManager.score>=700 && ScoreManager.score<1000){
             spawnTimer = 4;
         }
-        else if (ScoreManager.GetScore()>=1000){
+        else if (ScoreManager.score>=1000){
             spawnTimer = 3;
         }
     }

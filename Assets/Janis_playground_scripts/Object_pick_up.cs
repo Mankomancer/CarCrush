@@ -34,7 +34,7 @@ public class Object_pick_up : MonoBehaviour
         
         if (Action_button && other && ScoreManager.itemSlot == null && other.tag!="Shop")
         {
-            if (other.tag=="Cone" && !boughtCone && ScoreManager.GetMoney()>=conePrice){ //buying cone
+            if (other.tag=="Cone" && !boughtCone && ScoreManager.money>=conePrice){ //buying cone
                 ScoreManager.DecimateMoney(conePrice);
                 boughtCone = true;
             }
