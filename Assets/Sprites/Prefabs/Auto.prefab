@@ -665,19 +665,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: -5137283195704417696}
+  parentObject: {fileID: 0}
   autoPrefab: {fileID: 8402938443148484739}
-  rangeVander: 50
+  nearestOilObject: {fileID: 7528988732830275188, guid: 8425a298afdcacd43a2e4c66eb96048f, type: 3}
+  nearestAutoObject: {fileID: 8402938443148484739}
   centrePoint: {fileID: 4401682393655452949}
   canSplit: 0
-  crashingWithAuto: 0
-  seekingOil: 0
-  allOilObjects: []
-  nearestOilObject: {fileID: 7528988732830275188, guid: 8425a298afdcacd43a2e4c66eb96048f, type: 3}
+  rangeVander: 50
   oilDistance: 0
   nearestOilDistance: 0
   timeLeft: 5
-  allAutoObjects: []
-  nearestAutoObject: {fileID: 8402938443148484739}
   autoDistance: 0
   nearestAutoDistance: 0
   rangeSmallVander: 15
@@ -690,7 +687,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8402938443148484739}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 3
