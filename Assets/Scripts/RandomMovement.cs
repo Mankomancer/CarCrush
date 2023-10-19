@@ -89,13 +89,17 @@ public class RandomMovement : MonoBehaviour
     }
     
 
-    private void ObjectFinder()
+    /* OLD_function private void ObjectFinder() 
     {
         nearestAutoDistance = 100f;  //random value given. needed so no info from previous runs doesnt get saved (usually in case of single car or no oil)
         nearestOilDistance = 100f;
         if (!canSplit){
             for (int i=0; i<ScoreManager.allOilObjects?.Count; i++)
             {
+                if (ScoreManager.allOilObjects[i] is null)
+                {
+                    return;
+                }
                 oilDistance = UnityEngine.Vector3.Distance(this.transform.position, ScoreManager.allOilObjects[i].transform.position);
                 if (oilDistance<nearestOilDistance)
                 {
@@ -106,7 +110,11 @@ public class RandomMovement : MonoBehaviour
         }
         else{    
             for (int i=0; i<ScoreManager.allAutoObjects?.Count; i++)
-            { 
+            {
+                if (ScoreManager.allAutoObjects[i] is null)
+                {
+                    return;
+                }
                 autoDistance = UnityEngine.Vector3.Distance(this.transform.position, ScoreManager.allAutoObjects[i].transform.position);
                 if (autoDistance<nearestAutoDistance && autoDistance!=0 && ScoreManager.allAutoObjects[i].GetComponent<RandomMovement>().canSplit==true)
                 {     
@@ -116,12 +124,59 @@ public class RandomMovement : MonoBehaviour
             }
         }
     }
-    
+    */
+    private void ObjectFinder()
+    {
+        // Initialize the nearest distances to a large value
+        nearestAutoDistance = 100f;
+        nearestOilDistance = 100f;
+
+        // If the object cannot split, find the nearest oil object
+        if (!canSplit)
+        {
+            foreach (GameObject oilObject in ScoreManager.allOilObjects)
+            {
+                // Check if the oil object is not null
+                if (oilObject != null)
+                {
+                    // Calculate the distance to the oil object
+                    oilDistance = UnityEngine.Vector3.Distance(transform.position, oilObject.transform.position);
+
+                    // Update the nearest oil object and distance if needed
+                    if (oilDistance < nearestOilDistance)
+                    {
+                        nearestOilObject = oilObject;
+                        nearestOilDistance = oilDistance;
+                    }
+                }
+            }
+        }
+        // If the object can split, find the nearest auto object that can also split
+        else
+        {
+            foreach (GameObject autoObject in ScoreManager.allAutoObjects)
+            {
+                // Check if the auto object is not null and can split
+                if (autoObject != null && autoObject.GetComponent<RandomMovement>().canSplit)
+                {
+                    // Calculate the distance to the auto object
+                    autoDistance = UnityEngine.Vector3.Distance(transform.position, autoObject.transform.position);
+
+                    // Update the nearest auto object and distance if needed and not zero
+                    if (autoDistance < nearestAutoDistance && autoDistance != 0)
+                    {
+                        nearestAutoObject = autoObject;
+                        nearestAutoDistance = autoDistance;
+                    }
+                }
+            }
+        }
+    }
     public void HandleTrigger(Collider other)
     {
         if (other?.transform?.parent?.gameObject.tag=="Auto" && canSplit && nearestAutoObject!=null)
         {
-            if (nearestAutoObject.GetComponent<RandomMovement>().canSplit==true)
+            if (nearestAutoObject?.GetComponent<RandomMovement>().canSplit==true)
             {
                 canSplit=false;
                 nearestAutoObject.GetComponent<RandomMovement>().canSplit=false;
