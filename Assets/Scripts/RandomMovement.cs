@@ -22,9 +22,6 @@ public class RandomMovement : MonoBehaviour
 
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
     public bool canSplit = false; //if true, auto can split
-    public bool crashingWithAuto = false;
-    public bool seekingOil = false;
-
     //need these for navigation for specific auto, barell
     public float rangeVander = 50; //radius of sphere
     public float oilDistance;
@@ -51,17 +48,15 @@ public class RandomMovement : MonoBehaviour
         if (timeLeft <0){   //every 4 seconds check nearby Oil and cars, doing that so performance wouldnt suffer that much
             timeLeft = 4;
             ObjectFinder();
-        }
-
+          }
+        
         if (!canSplit && nearestOilDistance<=rangeSmallVander && nearestOilObject!=null){
             agent.ResetPath();
             agent.destination = nearestOilObject.transform.position;
-            seekingOil = true;
         }
         else if (canSplit && nearestAutoDistance<=rangeSmallVander && nearestAutoObject!=null){
             agent.ResetPath();
             agent.SetDestination(nearestAutoObject.transform.position);
-            crashingWithAuto = true;
         }
         else if(agent.remainingDistance <= agent.stoppingDistance) //done with path             stole this implementation from internet
         {
@@ -96,29 +91,28 @@ public class RandomMovement : MonoBehaviour
 
     private void ObjectFinder()
     {
-        seekingOil = false; //needed in case if someone else already took the oil or car crash already happened
-        crashingWithAuto = false;
         nearestAutoDistance = 100f;  //random value given. needed so no info from previous runs doesnt get saved (usually in case of single car or no oil)
         nearestOilDistance = 100f;
-      //  allOilObjects = GameObject.FindGameObjectsWithTag("Oil");   //yes, i know this is not efficient, but should be fine. There will never be situation when there are too many barrels or autos.
-        for (int i=0; i<ScoreManager.allOilObjects?.Count; i++)
-        {
-            oilDistance = UnityEngine.Vector3.Distance(this.transform.position, ScoreManager.allOilObjects[i].transform.position);
-            if (oilDistance<nearestOilDistance)
+        if (!canSplit){
+            for (int i=0; i<ScoreManager.allOilObjects?.Count; i++)
             {
-                nearestOilObject = ScoreManager.allOilObjects[i];
-                nearestOilDistance = oilDistance;
+                oilDistance = UnityEngine.Vector3.Distance(this.transform.position, ScoreManager.allOilObjects[i].transform.position);
+                if (oilDistance<nearestOilDistance)
+                {
+                    nearestOilObject = ScoreManager.allOilObjects[i];
+                    nearestOilDistance = oilDistance;
+                }
             }
         }
-            
-       // allAutoObjects = GameObject.FindGameObjectsWithTag("Auto");
-        for (int i=0; i<ScoreManager.allAutoObjects?.Count; i++)
-        { 
-            autoDistance = UnityEngine.Vector3.Distance(this.transform.position, ScoreManager.allAutoObjects[i].transform.position);
-            if (autoDistance<nearestAutoDistance && autoDistance!=0 && ScoreManager.allAutoObjects[i].GetComponent<RandomMovement>().canSplit==true)
-            {     
-                nearestAutoObject = ScoreManager.allAutoObjects[i];
-                nearestAutoDistance = autoDistance;
+        else{    
+            for (int i=0; i<ScoreManager.allAutoObjects?.Count; i++)
+            { 
+                autoDistance = UnityEngine.Vector3.Distance(this.transform.position, ScoreManager.allAutoObjects[i].transform.position);
+                if (autoDistance<nearestAutoDistance && autoDistance!=0 && ScoreManager.allAutoObjects[i].GetComponent<RandomMovement>().canSplit==true)
+                {     
+                    nearestAutoObject = ScoreManager.allAutoObjects[i];
+                    nearestAutoDistance = autoDistance;
+                }
             }
         }
     }
@@ -147,7 +141,6 @@ public class RandomMovement : MonoBehaviour
             Destroy(other.gameObject);
             nearestOilObject = null;
             canSplit = true;
-            seekingOil = false;
             this.transform.localScale = new UnityEngine.Vector3 (0.8f, 0.8f, 0.8f);
             ObjectFinder();
             timeLeft = 4;
