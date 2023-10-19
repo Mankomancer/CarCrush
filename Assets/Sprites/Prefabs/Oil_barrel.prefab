@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrelScore: 50
   barrelCost: 20
-  barellScript: {fileID: 0}
+  sellingBarell: {fileID: 0}
 --- !u!1 &8375948119830496247
 GameObject:
   m_ObjectHideFlags: 0

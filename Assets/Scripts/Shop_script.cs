@@ -17,7 +17,7 @@ public class Shop_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -26,11 +26,12 @@ public class Shop_script : MonoBehaviour
       
     }
 
-    private void OnTriggerEnter(Collider other){
-        if (other?.tag=="Shop"){ //in case if barrel spawns in shop, delete it and make new one
+    private void OnTriggerEnter(Collider other){//this will randomly give player score, if barell will spawn in market :/ need to thing about fix
+        if (other?.tag=="Shop"){
             ScoreManager.AddScore(barrelScore);
             ScoreManager.AddMoney(barrelCost);
             GameObject.FindWithTag("OilSpawner").GetComponent<BarellScript>().timeLeft=-1;
+            GameObject.FindWithTag("OilSpawner").GetComponent<AudioSource>().Play();
             Destroy(this.gameObject);
         }
     }

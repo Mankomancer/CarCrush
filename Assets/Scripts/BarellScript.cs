@@ -23,7 +23,27 @@ public class BarellScript : MonoBehaviour
             timeLeft = spawnTimer;
             Vector3 randomSpawnPosition = new Vector3(Random.Range(-49,49), 1.6f, Random.Range(-49,49));    //1.6f approximate height to spawn object
             Instantiate (barellPrefab, randomSpawnPosition, Quaternion.identity);
+            SpawnerTimeUpdater();            
         }
     }
-
+    public void SpawnerTimeUpdater(){
+        if (ScoreManager.GetScore()>=100){
+            spawnTimer = 8;
+        }
+        else if (ScoreManager.GetScore()>=200){
+            spawnTimer = 7;
+        }
+        else if (ScoreManager.GetScore()>=300){
+            spawnTimer = 6;
+        }
+        else if (ScoreManager.GetScore()>=500){
+            spawnTimer = 5;
+        }
+        else if (ScoreManager.GetScore()>=700){
+            spawnTimer = 4;
+        }
+        else if (ScoreManager.GetScore()>=1000){
+            spawnTimer = 3;
+        }
+    }
 }
