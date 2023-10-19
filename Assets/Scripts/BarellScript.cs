@@ -8,9 +8,6 @@ public class BarellScript : MonoBehaviour
     public GameObject barellPrefab;
     public float timeLeft = 5;
     public float spawnTimer =10;
-    public int barrelScore = 50;
-    public int barrelCost = 20;
-    public GameObject shopObject;
     
     // Start is called before the first frame update
     void Start()
@@ -28,16 +25,5 @@ public class BarellScript : MonoBehaviour
             Instantiate (barellPrefab, randomSpawnPosition, Quaternion.identity);
         }
     }
-
-    private void OnTriggerEnter(Collider other){
-        if (other.tag=="Shop"){ //in case if barrel spawns in shop, delete it and make new one
-            ScoreManager.AddScore(barrelScore);
-            ScoreManager.AddMoney(barrelCost);
-            timeLeft = -1;
-            Destroy(this.gameObject);
-        }
-    }
-
-    
 
 }

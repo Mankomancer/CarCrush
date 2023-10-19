@@ -11,7 +11,9 @@ public class Shop_script : MonoBehaviour
     ScoreManager.DecimateMoney(cipari);   nominuso izteretas naudiņas
     ScoreManager.ResetMoney(); nomet pa nullēm 
      */
-    
+    public int barrelScore = 50;
+    public int barrelCost = 20;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +26,13 @@ public class Shop_script : MonoBehaviour
       
     }
 
+    private void OnTriggerEnter(Collider other){
+        if (other?.tag=="Shop"){ //in case if barrel spawns in shop, delete it and make new one
+            ScoreManager.AddScore(barrelScore);
+            ScoreManager.AddMoney(barrelCost);
+            GameObject.FindWithTag("OilSpawner").GetComponent<BarellScript>().timeLeft=-1;
+            Destroy(this.gameObject);
+        }
+    }
     
 }

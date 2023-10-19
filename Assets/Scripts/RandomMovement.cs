@@ -36,6 +36,7 @@ public class RandomMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         transform.rotation = UnityEngine.Quaternion.Euler(0,0,0);
+        nearestAutoObject = null;
     }
 
     
@@ -133,7 +134,8 @@ public class RandomMovement : MonoBehaviour
             canSplit = true;
             seekingOil = false;
             this.transform.localScale = new UnityEngine.Vector3 (0.8f, 0.8f, 0.8f);
-            
+            ObjectFinder();
+            timeLeft = 4;
         }
     }
 

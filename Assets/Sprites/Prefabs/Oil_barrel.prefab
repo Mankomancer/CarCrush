@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6110497460610912779}
   - component: {fileID: 4720994852106845502}
   - component: {fileID: 2914078822834986928}
+  - component: {fileID: 5747195773500836037}
   m_Layer: 6
   m_Name: Oil_barrel
   m_TagString: Oil
@@ -108,6 +109,21 @@ CapsuleCollider:
   m_Height: 3.6
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &5747195773500836037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7528988732830275188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a690ab2c7e0b5e4d817c4d27cd0ca51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrelScore: 50
+  barrelCost: 20
+  barellScript: {fileID: 0}
 --- !u!1 &8375948119830496247
 GameObject:
   m_ObjectHideFlags: 0
