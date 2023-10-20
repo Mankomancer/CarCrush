@@ -222,10 +222,12 @@ public class RandomMovement : MonoBehaviour
             GameObject spawn;
             UnityEngine.Vector3 coneSpawn = new UnityEngine.Vector3(-40f, 1.4f, 2.7f);
             spawn = Instantiate (conePrefab, coneSpawn, UnityEngine.Quaternion.identity);
-            //GameObject.FindGameObjectWithTag("Player").GetComponent<Object_pick_up>().boughtCone=false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Object_pick_up>().boughtCone=false;
             //GameObject.FindGameObjectWithTag("Cone").transform.position = new UnityEngine.Vector3 (-40f, 1.4f, 2.7f);
             ScoreManager.allAutoObjects.Remove(this.gameObject);
-            Destroy(this.gameObject);
+           // Destroy(this.gameObject);
+            StartCoroutine(DelayedDestroy(gameObject));
+          
 
         }
     }
@@ -243,6 +245,11 @@ public class RandomMovement : MonoBehaviour
             }
                  
         }
+    }
+    IEnumerator DelayedDestroy(GameObject gameobject)
+    {
+        yield return new WaitForSeconds(ScoreManager.CarDestroyTime);
+        Destroy(gameobject);
     }
 }
 

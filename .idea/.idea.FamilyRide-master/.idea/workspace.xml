@@ -13,6 +13,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player_movement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shop_script.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Market_csript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Start_Quit_button.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_colider_rotation_fix.cs" root0="FORCE_HIGHLIGHTING" />
@@ -21,6 +22,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/pick_up_detector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Sprite_flip_check_direction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Game_controll_script.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BarellScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/No_rotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/UI_handler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -47,13 +49,15 @@
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Sprite_flip_check_direction.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/item_slot_image.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shop_script.cs" />
-        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Object_pick_up.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Score_tester_DoNotUse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BarellScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CarSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/UI_handler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Market_csript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Object_pick_up.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Game_controll_script.cs" />
       </list>
     </option>
   </component>
@@ -98,6 +102,7 @@
       <workItem from="1697214297981" duration="6101000" />
       <workItem from="1697383148925" duration="15433000" />
       <workItem from="1697646925613" duration="27440000" />
+      <workItem from="1697830882880" duration="3027000" />
     </task>
     <servers />
   </component>
