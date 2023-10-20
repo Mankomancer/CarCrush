@@ -7,7 +7,7 @@ public class Object_pick_up : MonoBehaviour
 {
     private Input_controlls controlls;
     private bool Action_button;
-    private bool boughtCone = false;
+    public bool boughtCone = false;
     private int conePrice = 10;
     private GameObject hold_object; // salabo negative scale varning, tika izmantota nepareiza metode nest objektus
     [SerializeField] private GameObject item_hold_spot;

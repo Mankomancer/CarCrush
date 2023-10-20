@@ -15,6 +15,7 @@ public class RandomMovement : MonoBehaviour
 
     [SerializeField] private GameObject parentObject; //objektu organizēšanai
     public GameObject autoPrefab;
+    public GameObject conePrefab;
    // public GameObject[] allOilObjects;
     public GameObject nearestOilObject;
    // public GameObject[] allAutoObjects;
@@ -196,6 +197,20 @@ public class RandomMovement : MonoBehaviour
             ObjectFinder();
             timeLeft = 4;
         }
+
+        if (other.tag=="Cone"){
+            ScoreManager.DropItem();
+            ScoreManager.itemSlot = null;
+            Destroy(other.gameObject);
+            GameObject spawn;
+            UnityEngine.Vector3 coneSpawn = new UnityEngine.Vector3(-40f, 1.4f, 2.7f);
+            spawn = Instantiate (conePrefab, coneSpawn, UnityEngine.Quaternion.identity);
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Object_pick_up>().boughtCone=false;
+            //GameObject.FindGameObjectWithTag("Cone").transform.position = new UnityEngine.Vector3 (-40f, 1.4f, 2.7f);
+            ScoreManager.allAutoObjects.Remove(this.gameObject);
+            Destroy(this.gameObject);
+
+        }
     }
 
     private void FirstTimeItemAddToList(string tag,List<GameObject> list)
@@ -209,8 +224,7 @@ public class RandomMovement : MonoBehaviour
                 // Add each object to the list
                 list.Add(foundObject);
             }
-            
-            
+                 
         }
     }
 }
