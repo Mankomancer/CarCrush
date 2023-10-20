@@ -13,6 +13,8 @@
         <e p="Janis_playground_scripts" t="Include">
           <e p="Camera_sort script.cs" t="Include" />
           <e p="Car_colider_rotation_fix.cs" t="Include" />
+          <e p="Game_controll_script.cs" t="Include" />
+          <e p="Game_controll_script1.cs" t="Include" />
           <e p="item_slot_image.cs" t="Include" />
           <e p="No_rotation.cs" t="Include" />
           <e p="Object_pick_up.cs" t="Include" />
