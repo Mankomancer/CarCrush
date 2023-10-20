@@ -8,8 +8,9 @@ public class UI_handler : MonoBehaviour
     public TMP_Text moneyText;
     public TMP_Text doomsDayClock;
     public TMP_Text howLongYouSurvived;
-    public Vector2 aliveTime;
-    public Vector2 doomsDayTime;
+    private Vector2 aliveTime;
+    private Vector2 doomsDayTime;
+    private float doomClockStartTimer = 180;
     
     // The minimum and maximum scale of the text
     public float minScale = 0.8f;
@@ -24,14 +25,14 @@ public class UI_handler : MonoBehaviour
     
     void Start()
     {
-        ScoreManager.doomsDayTimer = 180;
+        ScoreManager.doomsDayTimer = doomClockStartTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
         ScoreManager.howLongYouSurvived += Time.deltaTime;
-        if (ScoreManager.doomsDayTimer>0)
+        if (ScoreManager.doomsDayTimer>1)
         {
             ScoreManager.doomsDayTimer-=Time.deltaTime;
         }
@@ -62,5 +63,10 @@ public class UI_handler : MonoBehaviour
         // Lerp the scale and color based on the value
         doomsDayClock.transform.localScale = Vector3.Lerp(Vector3.one * minScale, Vector3.one * maxScale, t);
         doomsDayClock.color = Color.Lerp(color1, color2, t);
+    }
+
+    public void DoomsDayTimerSet(float setTimer)
+    {
+        doomClockStartTimer = setTimer;
     }
 }
