@@ -8,6 +8,7 @@ public static class ScoreManager
     public static float doomsDayTimer =0;
     public static int score = 0;
     public static int money = 0;
+    public static float carDestroyBonuseTime = 10f;
     public static float CarDestroyTime = 5f;
     public static int conePrice = 10;
     public static GameObject itemSlot ;

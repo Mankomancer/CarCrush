@@ -6,6 +6,7 @@ public class Game_controll_script : MonoBehaviour
 {
     [SerializeField] private float doomsDayTimerStarTime;
     [SerializeField] private float coneCarDestroyTimer = 5f;
+    [SerializeField] private float carDestroyTimeBonus = 10f;
     [SerializeField] private int conePrice;
     [SerializeField] private int barrelPrice;
     [SerializeField] private int barrelScore;
@@ -16,6 +17,7 @@ public class Game_controll_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ScoreManager.carDestroyBonuseTime = carDestroyTimeBonus;
         audioController.clip = backGroundMusic;
         ScoreManager.isPaused = false;
         ScoreManager.conePrice = conePrice;

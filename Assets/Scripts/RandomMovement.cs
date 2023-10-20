@@ -35,9 +35,11 @@ public class RandomMovement : MonoBehaviour
     public float rangeSmallVander = 15f;
     private float boostTime;    //needed for rock speed boost
     private bool boosting;
+    private bool isInMarket; //neļauj iznicināt konusam mašīnu gadījumā ja cenšās ienest mašīnu marketā
     
     void Start()
     {
+        isInMarket = false;
         agent = GetComponent<NavMeshAgent>();
         transform.rotation = UnityEngine.Quaternion.Euler(0,0,0);
         nearestAutoObject = null;
@@ -193,7 +195,8 @@ public class RandomMovement : MonoBehaviour
             this.GetComponent<NavMeshAgent>().speed = 15f;
         }
 
-        if (other.tag=="Cone"){
+        if (other.tag=="Cone"&& !isInMarket)
+        {
             ScoreManager.DropItem();
             ScoreManager.itemSlot = null;
             Destroy(other.gameObject);
@@ -201,12 +204,13 @@ public class RandomMovement : MonoBehaviour
             UnityEngine.Vector3 coneSpawn = new UnityEngine.Vector3(-40f, 1.4f, 2.7f);
             spawn = Instantiate (conePrefab, coneSpawn, UnityEngine.Quaternion.identity);
             GameObject.FindGameObjectWithTag("Player").GetComponent<Object_pick_up>().boughtCone=false;
-            //GameObject.FindGameObjectWithTag("Cone").transform.position = new UnityEngine.Vector3 (-40f, 1.4f, 2.7f);
             ScoreManager.allAutoObjects.Remove(this.gameObject);
-           // Destroy(this.gameObject);
             StartCoroutine(DelayedDestroy(gameObject));
-          
+        }
 
+        if (other.tag=="Shop")
+        {
+           isInMarket=true;
         }
     }
 
@@ -227,7 +231,16 @@ public class RandomMovement : MonoBehaviour
     IEnumerator DelayedDestroy(GameObject gameobject)
     {
         yield return new WaitForSeconds(ScoreManager.CarDestroyTime);
+        ScoreManager.doomsDayTimer += ScoreManager.carDestroyBonuseTime;
         Destroy(gameobject);
+    }
+
+    public void CarExitFromMarket(Collider other)
+    {
+        if (other.tag=="Shop")
+        {
+            isInMarket=false;
+        }
     }
 }
 
