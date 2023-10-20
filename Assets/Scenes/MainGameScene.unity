@@ -3443,7 +3443,7 @@ MonoBehaviour:
   parentObject: {fileID: 682345119}
   barellPrefab: {fileID: 7528988732830275188, guid: 8425a298afdcacd43a2e4c66eb96048f, type: 3}
   timeLeft: 3
-  spawnTimer: 0.1
+  spawnTimer: 10
 --- !u!82 &1317434233
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4305,8 +4305,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 349451691245779385, guid: 8bace3bb8410e5a429d7004191336d9a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 349451691245779385, guid: 8bace3bb8410e5a429d7004191336d9a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.89
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 349451691245779385, guid: 8bace3bb8410e5a429d7004191336d9a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4314,7 +4318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 349451691245779385, guid: 8bace3bb8410e5a429d7004191336d9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.7618828
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 349451691245779385, guid: 8bace3bb8410e5a429d7004191336d9a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4343,6 +4347,10 @@ PrefabInstance:
     - target: {fileID: 349451691245779385, guid: 8bace3bb8410e5a429d7004191336d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202921111769499666, guid: 8bace3bb8410e5a429d7004191336d9a, type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9207969577925836928, guid: 8bace3bb8410e5a429d7004191336d9a, type: 3}
       propertyPath: m_Name

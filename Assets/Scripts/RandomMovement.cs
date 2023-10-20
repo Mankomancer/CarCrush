@@ -33,6 +33,8 @@ public class RandomMovement : MonoBehaviour
     public float autoDistance;
     public float nearestAutoDistance = 100f;
     public float rangeSmallVander = 15f;
+    private float boostTime;    //needed for rock speed boost
+    private bool boosting;
     
     void Start()
     {
@@ -43,7 +45,6 @@ public class RandomMovement : MonoBehaviour
         FirstTimeItemAddToList("Auto",ScoreManager.allAutoObjects);
     }
 
-    
     void Update()
     {
         
@@ -52,7 +53,17 @@ public class RandomMovement : MonoBehaviour
         {   
             timeLeft = 4f;//every 4 seconds check nearby Oil and cars, doing that so performance wouldnt suffer that much
             ObjectFinder();
-          }
+        }
+
+        if (boosting){
+            boostTime+=Time.deltaTime;
+            if (boostTime>5){
+                this.GetComponent<NavMeshAgent>().speed = 10f;
+                boosting = false;
+                boostTime = 0;
+            }
+        }
+
          /* // somewhere i messed up but new code works 
         if (!canSplit && nearestOilDistance<=rangeSmallVander && nearestOilObject!=null)
         {
@@ -196,6 +207,12 @@ public class RandomMovement : MonoBehaviour
             this.transform.localScale = new UnityEngine.Vector3 (0.8f, 0.8f, 0.8f);
             ObjectFinder();
             timeLeft = 4;
+        }
+
+        if (other.tag=="Rock"){
+            boosting = true;
+            boostTime = 0;
+            this.GetComponent<NavMeshAgent>().speed = 15f;
         }
 
         if (other.tag=="Cone"){
