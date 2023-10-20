@@ -84,7 +84,7 @@ public class RandomMovement : MonoBehaviour
                 }
                 break;
             case true:
-                if (nearestAutoDistance <= rangeSmallVander && nearestAutoObject?.GetComponent<RandomMovement>().canSplit == true)
+                if (nearestAutoDistance <= rangeSmallVander && nearestAutoObject?.GetComponent<RandomMovement>()?.canSplit == true)
                 {
                     agent.ResetPath();
                     agent.SetDestination(nearestAutoObject.transform.position);
@@ -93,7 +93,7 @@ public class RandomMovement : MonoBehaviour
         }
 
         // Use the var keyword to declare local variables
-        if (agent.remainingDistance <= agent.stoppingDistance) //done with path
+        if (agent?.remainingDistance <= agent?.stoppingDistance) //done with path
         {
             var point = Vector3.zero;
             if (RandomPoint(centrePoint.position, rangeVander, out point)) //pass in our centre point and radius of area
