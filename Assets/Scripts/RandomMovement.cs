@@ -15,6 +15,7 @@ public class RandomMovement : MonoBehaviour
 
     [SerializeField] private GameObject parentObject; //objektu organizēšanai
     public GameObject autoPrefab;
+    public GameObject conePrefab;
    // public GameObject[] allOilObjects;
     public GameObject nearestOilObject;
    // public GameObject[] allAutoObjects;
@@ -32,6 +33,8 @@ public class RandomMovement : MonoBehaviour
     public float autoDistance;
     public float nearestAutoDistance = 100f;
     public float rangeSmallVander = 15f;
+    private float boostTime;    //needed for rock speed boost
+    private bool boosting;
     
     void Start()
     {
@@ -42,7 +45,6 @@ public class RandomMovement : MonoBehaviour
         FirstTimeItemAddToList("Auto",ScoreManager.allAutoObjects);
     }
 
-    
     void Update()
     {
         
@@ -51,7 +53,17 @@ public class RandomMovement : MonoBehaviour
         {   
             timeLeft = 4f;//every 4 seconds check nearby Oil and cars, doing that so performance wouldnt suffer that much
             ObjectFinder();
-          }
+        }
+
+        if (boosting){
+            boostTime+=Time.deltaTime;
+            if (boostTime>5){
+                this.GetComponent<NavMeshAgent>().speed = 10f;
+                boosting = false;
+                boostTime = 0;
+            }
+        }
+
          /* // somewhere i messed up but new code works 
         if (!canSplit && nearestOilDistance<=rangeSmallVander && nearestOilObject!=null)
         {
@@ -83,7 +95,7 @@ public class RandomMovement : MonoBehaviour
                 }
                 break;
             case true:
-                if (nearestAutoDistance <= rangeSmallVander && nearestAutoObject?.GetComponent<RandomMovement>().canSplit == true)
+                if (nearestAutoDistance <= rangeSmallVander && nearestAutoObject?.GetComponent<RandomMovement>()?.canSplit == true)
                 {
                     agent.ResetPath();
                     agent.SetDestination(nearestAutoObject.transform.position);
@@ -92,7 +104,7 @@ public class RandomMovement : MonoBehaviour
         }
 
         // Use the var keyword to declare local variables
-        if (agent.remainingDistance <= agent.stoppingDistance) //done with path
+        if (agent?.remainingDistance <= agent?.stoppingDistance) //done with path
         {
             var point = Vector3.zero;
             if (RandomPoint(centrePoint.position, rangeVander, out point)) //pass in our centre point and radius of area
@@ -196,6 +208,26 @@ public class RandomMovement : MonoBehaviour
             ObjectFinder();
             timeLeft = 4;
         }
+
+        if (other.tag=="Rock"){
+            boosting = true;
+            boostTime = 0;
+            this.GetComponent<NavMeshAgent>().speed = 15f;
+        }
+
+        if (other.tag=="Cone"){
+            ScoreManager.DropItem();
+            ScoreManager.itemSlot = null;
+            Destroy(other.gameObject);
+            GameObject spawn;
+            UnityEngine.Vector3 coneSpawn = new UnityEngine.Vector3(-40f, 1.4f, 2.7f);
+            spawn = Instantiate (conePrefab, coneSpawn, UnityEngine.Quaternion.identity);
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Object_pick_up>().boughtCone=false;
+            //GameObject.FindGameObjectWithTag("Cone").transform.position = new UnityEngine.Vector3 (-40f, 1.4f, 2.7f);
+            ScoreManager.allAutoObjects.Remove(this.gameObject);
+            Destroy(this.gameObject);
+
+        }
     }
 
     private void FirstTimeItemAddToList(string tag,List<GameObject> list)
@@ -209,8 +241,7 @@ public class RandomMovement : MonoBehaviour
                 // Add each object to the list
                 list.Add(foundObject);
             }
-            
-            
+                 
         }
     }
 }

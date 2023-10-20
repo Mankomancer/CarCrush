@@ -667,6 +667,7 @@ MonoBehaviour:
   agent: {fileID: -5137283195704417696}
   parentObject: {fileID: 0}
   autoPrefab: {fileID: 8402938443148484739}
+  conePrefab: {fileID: 9207969577925836928, guid: 8bace3bb8410e5a429d7004191336d9a, type: 3}
   nearestOilObject: {fileID: 7528988732830275188, guid: 8425a298afdcacd43a2e4c66eb96048f, type: 3}
   nearestAutoObject: {fileID: 8402938443148484739}
   centrePoint: {fileID: 4401682393655452949}
@@ -678,10 +679,6 @@ MonoBehaviour:
   autoDistance: 0
   nearestAutoDistance: 0
   rangeSmallVander: 15
-  minX: -49
-  maxX: 49
-  minZ: -49
-  maxZ: 49
 --- !u!195 &-5137283195704417696
 NavMeshAgent:
   m_ObjectHideFlags: 0
