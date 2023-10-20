@@ -63,28 +63,6 @@ public class RandomMovement : MonoBehaviour
                 boostTime = 0;
             }
         }
-
-         /* // somewhere i messed up but new code works 
-        if (!canSplit && nearestOilDistance<=rangeSmallVander && nearestOilObject!=null)
-        {
-            agent.ResetPath();
-            agent.destination = nearestOilObject.transform.position;
-        }
-        else if (canSplit && nearestAutoDistance<=rangeSmallVander && nearestAutoObject!=null)
-        {
-            agent.ResetPath();
-            agent.SetDestination(nearestAutoObject.transform.position);
-        }
-        else if(agent.remainingDistance <= agent.stoppingDistance) //done with path             stole this implementation from internet
-        {
-            UnityEngine.Vector3 point;
-            if (RandomPoint(centrePoint.position, rangeVander, out point)) //pass in our centre point and radius of area
-            {
-                Debug.DrawRay(point, UnityEngine.Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
-                agent.ResetPath();
-                agent.SetDestination(point);
-            }
-        }*/
         switch (canSplit)
         {
             case false:

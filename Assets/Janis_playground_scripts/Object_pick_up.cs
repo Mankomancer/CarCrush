@@ -8,7 +8,6 @@ public class Object_pick_up : MonoBehaviour
     private Input_controlls controlls;
     private bool Action_button;
     public bool boughtCone = false;
-    private int conePrice = 10;
     private GameObject hold_object; // salabo negative scale varning, tika izmantota nepareiza metode nest objektus
     [SerializeField] private GameObject item_hold_spot;
 
@@ -34,8 +33,8 @@ public class Object_pick_up : MonoBehaviour
         
         if (Action_button && other && ScoreManager.itemSlot == null && other.tag!="Shop")
         {
-            if (other.tag=="Cone" && !boughtCone && ScoreManager.money>=conePrice){ //buying cone
-                ScoreManager.DecimateMoney(conePrice);
+            if (other.tag=="Cone" && !boughtCone && ScoreManager.money>=ScoreManager.conePrice){ //buying cone
+                ScoreManager.DecimateMoney(ScoreManager.conePrice);
                 boughtCone = true;
             }
             if (other.tag!="Cone" || boughtCone)

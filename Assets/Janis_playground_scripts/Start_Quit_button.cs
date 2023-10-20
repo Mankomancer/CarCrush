@@ -17,6 +17,6 @@ public class Start_Quit_button : MonoBehaviour
     public void NewGame(string scenename)
     {
         SceneManager.LoadScene(scenename);
-       // ScoreManager.ResetScore();
+        ScoreManager.ResetData();
     }
 }

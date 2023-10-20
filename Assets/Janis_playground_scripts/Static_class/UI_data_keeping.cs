@@ -9,10 +9,11 @@ public static class ScoreManager
     public static int score = 0;
     public static int money = 0;
     public static float CarDestroyTime = 5f;
+    public static int conePrice = 10;
     public static GameObject itemSlot ;
     public static List<GameObject> allAutoObjects = new List<GameObject>();
     public static List<GameObject> allOilObjects = new List<GameObject>();
-
+    public static bool isPaused;
 
     // This is a static method that adds points to the score
     public static void AddScore(int points)
@@ -25,9 +26,11 @@ public static class ScoreManager
     {
         score -= minus_value;
     }
-    public static void ResetScore()
+    public static void ResetData()
     {
         score = 0;
+        money = 0;
+        howLongYouSurvived = 0;
     }
 
     public static void AddMoney(int points)
@@ -39,10 +42,6 @@ public static class ScoreManager
     public static void DecimateMoney(int minus_value)
     {
         money -= minus_value;
-    }
-    public static void ResetMoney()
-    {
-        money = 0;
     }
     public static void InsertItem(GameObject item)
     {
