@@ -253,6 +253,7 @@ public class RandomMovement : MonoBehaviour
                 ScoreManager.itemSlot = null;
             }
             Destroy(gameobject);
+            ScoreManager.familySound = true;
         }
     }
 

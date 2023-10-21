@@ -60,13 +60,13 @@
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_mounting_script.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_colider_rotation_fix.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Object_pick_up.cs" />
-        <option value="$PROJECT_DIR$/Assets/Controller_settings/Audio_controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Controller_settings/Animation_controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Lose_script.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Game_controll_script.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Rock_movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Controller_settings/Audio_controller.cs" />
       </list>
     </option>
   </component>

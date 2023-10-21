@@ -7,6 +7,7 @@ public class Audio_controller : MonoBehaviour
 {
     [SerializeField] private AudioSource AutoCollisions;
     [SerializeField] private AudioSource PlayerSplat;
+    [SerializeField] private AudioSource familySound;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,11 @@ public class Audio_controller : MonoBehaviour
         {
             PlayerSplat.Play();
             ScoreManager.playerSplat = false;
+        }
+        if (ScoreManager.familySound)
+        {
+            familySound.Play();
+            ScoreManager.familySound = false;
         }
     }
 }
