@@ -51,6 +51,7 @@ public class Player_movement : MonoBehaviour
         }
 
         if (other.tag=="Rock"){
+            this.transform.localScale=new UnityEngine.Vector3 (1f, 0.2f, 1f);
             ScoreManager.playerSplat = true;
             ScoreManager.doomsDayTimer = 0;
         }
