@@ -33,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Lose_script.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Pause_script.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/item_slot_image.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Sprites/Prefabs/Auto.prefab" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -53,7 +54,6 @@
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Start_Quit_button.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Pause_script.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Lose_script.cs" />
-        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_colider_rotation_fix.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Market_csript.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Game_controll_script.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" />
@@ -62,6 +62,7 @@
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Sprite_flip_check_direction.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Object_pick_up.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_mounting_script.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_colider_rotation_fix.cs" />
       </list>
     </option>
   </component>
@@ -107,7 +108,7 @@
       <workItem from="1697383148925" duration="15433000" />
       <workItem from="1697646925613" duration="27440000" />
       <workItem from="1697830882880" duration="7812000" />
-      <workItem from="1697878776549" duration="4213000" />
+      <workItem from="1697878776549" duration="5143000" />
     </task>
     <servers />
   </component>
