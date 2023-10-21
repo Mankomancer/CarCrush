@@ -9,6 +9,7 @@ public class Object_pick_up : MonoBehaviour
     [SerializeField] private float carHoldZ_offset = 0.1f;
     private Input_controlls controlls;
     private bool Action_button;
+    private bool actionReset = true;
     public bool boughtCone = false;
     private GameObject hold_object; // salabo negative scale varning, tika izmantota nepareiza metode nest objektus
     [SerializeField] private GameObject item_hold_spot;
@@ -37,7 +38,7 @@ public class Object_pick_up : MonoBehaviour
     {
         Rigidbody otherRigidbody = other.attachedRigidbody;
         
-        if (Action_button && other && ScoreManager.itemSlot == null && other.tag!="Shop")
+        if (actionReset && Action_button && other && ScoreManager.itemSlot == null && other.tag!="Shop")
         {
             if (other.tag=="Cone" && !boughtCone && ScoreManager.money>=ScoreManager.conePrice){ //buying cone
                 ScoreManager.DecimateMoney(ScoreManager.conePrice);
@@ -56,12 +57,15 @@ public class Object_pick_up : MonoBehaviour
 
                 hold_object = ScoreManager.ItemRecall();
             }
+
+            actionReset = false;
         }
     }
 
     void Action_Release()
     {
         Action_button = false;
+        actionReset = true;
     }
     void Action_set()
     {

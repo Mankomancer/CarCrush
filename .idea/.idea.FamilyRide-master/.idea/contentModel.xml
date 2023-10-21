@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Controller_settings" t="Include">
           <e p="Animation_controller.cs" t="Include" />
+          <e p="Audio_controller.cs" t="Include" />
           <e p="Input_controlls.cs" t="Include" />
         </e>
         <e p="Janis_playground_scripts" t="Include">

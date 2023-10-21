@@ -178,7 +178,10 @@ public class RandomMovement : MonoBehaviour
                 GameObject spawn ;
                 spawn = Instantiate (autoPrefab, carSpawn, UnityEngine.Quaternion.identity,parentObject.transform);
                 ScoreManager.allAutoObjects.Add(spawn); // adds newly spawned car to a list
-                this.GetComponent<AudioSource>().Play();
+                if (!ScoreManager.carColsisionSound)
+                {
+                    ScoreManager.carColsisionSound = true;
+                }
             }
         }
         if (marketToDestroy && other.tag=="Auto "){
