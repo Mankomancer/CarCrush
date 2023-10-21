@@ -18,6 +18,7 @@ public static class ScoreManager
     public static bool isPaused;
     public static bool carColsisionSound = false;
     public static int maxCarCount = 10;
+    public static bool playerSplat = false;
 
     // This is a static method that adds points to the score
     public static void AddScore(int points)

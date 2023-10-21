@@ -51,6 +51,7 @@ public class Player_movement : MonoBehaviour
         }
 
         if (other.tag=="Rock"){
+            ScoreManager.playerSplat = true;
             ScoreManager.doomsDayTimer = 0;
         }
     }

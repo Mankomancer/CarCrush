@@ -6,6 +6,7 @@ using UnityEngine;
 public class Audio_controller : MonoBehaviour
 {
     [SerializeField] private AudioSource AutoCollisions;
+    [SerializeField] private AudioSource PlayerSplat;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,12 @@ public class Audio_controller : MonoBehaviour
         {
             AutoCollisions.Play();
             ScoreManager.carColsisionSound = false;
+        }
+
+        if (ScoreManager.playerSplat)
+        {
+            PlayerSplat.Play();
+            ScoreManager.playerSplat = false;
         }
     }
 }
