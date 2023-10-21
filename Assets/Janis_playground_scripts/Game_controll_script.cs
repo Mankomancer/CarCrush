@@ -25,6 +25,8 @@ public class Game_controll_script : MonoBehaviour
         ScoreManager.maxCarCount = maxCarCount;
         ScoreManager.carDestroyBonuseTime = carDestroyTimeBonus;
         audioController.clip = backGroundMusic;
+        audioController.enabled = false;
+        audioController.enabled = true;
         ScoreManager.isPaused = false;
         ScoreManager.conePrice = conePrice;
         ScoreManager.CarDestroyTime = coneCarDestroyTimer;

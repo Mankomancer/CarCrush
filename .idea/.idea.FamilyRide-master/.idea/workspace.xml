@@ -11,10 +11,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player_movement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Market_csript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Start_Quit_button.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_colider_rotation_fix.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Controller_settings/Animation_controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Wheel_rotate.cs" root0="FORCE_HIGHLIGHTING" />
@@ -23,18 +21,21 @@
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Sprite_flip_check_direction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Game_controll_script.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BarellScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Object_pick_up.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Camera_sort script.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/item_slot_image.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Sprites/Prefabs/Auto.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rock_movement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player_movement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Start_Quit_button.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/No_rotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/UI_handler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Controller_settings/Audio_controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Controller_settings/Input_controlls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CarSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Object_pick_up.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Camera_sort script.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_mounting_script.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Lose_script.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/Pause_script.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Janis_playground_scripts/item_slot_image.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Sprites/Prefabs/Auto.prefab" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -63,8 +64,9 @@
         <option value="$PROJECT_DIR$/Assets/Controller_settings/Animation_controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" />
-        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Game_controll_script.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Lose_script.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Game_controll_script.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rock_movement.cs" />
       </list>
     </option>
   </component>

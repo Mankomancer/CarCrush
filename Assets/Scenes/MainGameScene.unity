@@ -313,7 +313,7 @@ MonoBehaviour:
   barrelScore: 1000
   uiText: {fileID: 156557703}
   Market: {fileID: 1460634513}
-  backGroundMusic: {fileID: 0}
+  backGroundMusic: {fileID: 8300000, guid: 35438adba13cb1a4292c22f407039514, type: 3}
   audioController: {fileID: 668891551}
 --- !u!4 &92320624
 Transform:
@@ -2002,7 +2002,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.16
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6863,7 +6863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7754438476670671178, guid: e8c5f9c2223807b48b33397f2f196be1, type: 3}
       propertyPath: m_Radius
-      value: 1
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 9178292276383477705, guid: e8c5f9c2223807b48b33397f2f196be1, type: 3}
       propertyPath: m_Enabled
