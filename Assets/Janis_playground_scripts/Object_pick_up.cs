@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Object_pick_up : MonoBehaviour
 {
+    [SerializeField] private float carHoldZ_offset = 0.1f;
     private Input_controlls controlls;
     private bool Action_button;
     public bool boughtCone = false;
@@ -23,7 +24,10 @@ public class Object_pick_up : MonoBehaviour
     {
         if (hold_object)
         {//objekta nešanas funkcija
-            hold_object.transform.position = new Vector3(item_hold_spot.transform.position.x,hold_object.transform.position.y,item_hold_spot.transform.position.z);
+            var newZ = item_hold_spot.transform.position.z - carHoldZ_offset;
+           if(hold_object.tag=="Auto")
+             newZ = item_hold_spot.transform.position.z + carHoldZ_offset;
+           hold_object.transform.position = new Vector3(item_hold_spot.transform.position.x,hold_object.transform.position.y,newZ);
         }
     }
 

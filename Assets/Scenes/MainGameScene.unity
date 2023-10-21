@@ -6483,6 +6483,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7001823821153496940, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
+      propertyPath: carHoldZ_offset
+      value: -0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
