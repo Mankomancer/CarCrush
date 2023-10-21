@@ -37,7 +37,14 @@ public class Animation_controller : MonoBehaviour
            state = false;
       }
 
-      if (ScoreManager.itemSlot is null || ScoreManager.itemSlot?.tag !="Auto" )
+      if (ScoreManager.itemSlot != null)
+      {
+          if (ScoreManager.itemSlot?.tag !="Auto")
+          {
+              carMounting = false;
+          }
+      }
+      if (ScoreManager.itemSlot is null )
       {
           carMounting = false;
       }

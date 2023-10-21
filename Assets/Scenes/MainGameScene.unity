@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7eb1e1ffc2ca949b649d2ffd1a4a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doomsDayTimerStarTime: 30
+  doomsDayTimerStarTime: 300
   coneCarDestroyTimer: 5
   carDestroyTimeBonus: 100
   conePrice: 1

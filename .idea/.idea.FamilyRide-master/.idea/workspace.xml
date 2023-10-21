@@ -57,12 +57,12 @@
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Market_csript.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Game_controll_script.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Controller_settings/Animation_controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Sprite_flip_check_direction.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Object_pick_up.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_mounting_script.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_colider_rotation_fix.cs" />
+        <option value="$PROJECT_DIR$/Assets/Controller_settings/Animation_controller.cs" />
       </list>
     </option>
   </component>
@@ -108,7 +108,7 @@
       <workItem from="1697383148925" duration="15433000" />
       <workItem from="1697646925613" duration="27440000" />
       <workItem from="1697830882880" duration="7812000" />
-      <workItem from="1697878776549" duration="5143000" />
+      <workItem from="1697878776549" duration="5728000" />
     </task>
     <servers />
   </component>
