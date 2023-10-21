@@ -246,7 +246,12 @@ public class RandomMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(ScoreManager.CarDestroyTime);
         ScoreManager.doomsDayTimer += ScoreManager.carDestroyBonuseTime;
-        if (marketToDestroy){
+        if (marketToDestroy)
+        {
+            if (ScoreManager.itemSlot==gameobject)
+            {
+                ScoreManager.itemSlot = null;
+            }
             Destroy(gameobject);
         }
     }

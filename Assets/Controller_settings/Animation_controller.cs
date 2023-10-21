@@ -10,7 +10,7 @@ public class Animation_controller : MonoBehaviour
     private bool state;
     private bool walk;
     private bool carMounting = false;
-    
+
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -22,9 +22,12 @@ public class Animation_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (ScoreManager.itemSlot is null)
+        {
+            carMounting = false;
+        }
 
-      walk = IsWalking();
+        walk = IsWalking();
       if (ScoreManager.itemSlot!=null)
       {
           state = true; 
