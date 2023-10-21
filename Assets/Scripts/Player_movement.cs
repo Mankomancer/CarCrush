@@ -49,6 +49,10 @@ public class Player_movement : MonoBehaviour
             boosting = true;
             playerSpeed = 25f;
         }
+
+        if (other.tag=="Rock"){
+            ScoreManager.doomsDayTimer = 0;
+        }
     }
 
     private void Movement_With_Limits(Vector3 direction,float speed)
