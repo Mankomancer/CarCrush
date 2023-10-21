@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Object_pick_up : MonoBehaviour
 {
+    [SerializeField] private Sprite_flip_check_direction flip;
     [SerializeField] private float carHoldZ_offset = 0.1f;
     private Input_controlls controlls;
     private bool Action_button;
@@ -22,6 +23,7 @@ public class Object_pick_up : MonoBehaviour
 
     private void Update()
     {
+        CheckFacingDirection();
         if (hold_object)
         {//objekta nešanas funkcija
             var newZ = item_hold_spot.transform.position.z - carHoldZ_offset;
@@ -76,6 +78,11 @@ public class Object_pick_up : MonoBehaviour
         hold_object = null;
        // ScoreManager.ItemRecall().transform.parent = null;
         ScoreManager.DropItem();
+    }
+
+    void CheckFacingDirection()//trust me we need this
+    {
+        ScoreManager.playerIsFacingRight = flip.FlipDirection();
     }
     private void OnEnable()
     {

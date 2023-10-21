@@ -4,6 +4,7 @@ using UnityEngine;
 public static class ScoreManager
 {
     // This is a static variable that stores the score
+    public static bool playerIsFacingRight = false;
     public static float howLongYouSurvived = 0;
     public static float doomsDayTimer =0;
     public static int score = 0;

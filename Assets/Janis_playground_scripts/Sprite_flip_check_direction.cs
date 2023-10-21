@@ -33,4 +33,13 @@ public class Sprite_flip_check_direction : MonoBehaviour
             playerPreviousPositionX = playerCurrentPositionX;
         }
     }
+
+    public bool FlipDirection()
+    {
+        if (playerTransform.localScale.x > 0)
+        {
+            return true;
+        }
+        else return false;
+    }
 }

@@ -9,6 +9,7 @@ public class Animation_controller : MonoBehaviour
     private Vector2 playerCurrentPositionX;
     private bool state;
     private bool walk;
+    private bool carMounting = false;
     
     public Animator animator;
     // Start is called before the first frame update
@@ -22,38 +23,39 @@ public class Animation_controller : MonoBehaviour
     void Update()
     {
        
-      /*  if (IsWalking()&&!ScoreManager.itemSlot)
-        {
-            ChangeState(1);
-        }
-        if (IsWalking()&&ScoreManager.itemSlot)
-        {
-            ChangeState(2);
-        }
 
-        if (!IsWalking())
-        {
-            ChangeState(0);
-        }*/
       walk = IsWalking();
-      if (ScoreManager.itemSlot != null)
+      if (ScoreManager.itemSlot!=null)
       {
-           state = true; 
+          state = true; 
+          if (ScoreManager.itemSlot.tag == "Auto")
+          {
+              carMounting = true;
+          }
       }else
       {
            state = false;
       }
-      
-      switch (walk, state)
+
+      if (ScoreManager.itemSlot is null || ScoreManager.itemSlot?.tag !="Auto" )
       {
-          case (true, false):
+          carMounting = false;
+      }
+      
+      
+      switch (walk, state,carMounting)
+      {
+          case (true, false,false):
               ChangeState(1);
               break;
-          case (true, true):
+          case (true, true,false):
               ChangeState(2);
               break;
-          case (false, _):
+          case (false, _,false):
               ChangeState(0);
+              break;
+          case ( _, _,true):
+              ChangeState(3);
               break;
       }
     }
