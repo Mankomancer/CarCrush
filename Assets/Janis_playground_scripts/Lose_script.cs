@@ -14,6 +14,7 @@ public class Lose_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MaxCarCountReached();
         DoomTimerChecker();
     }
 
@@ -24,6 +25,14 @@ public class Lose_script : MonoBehaviour
             ScoreManager.isPaused = true;
             Time.timeScale = 0f;
             loseUi.SetActive(true);
+        }
+    }
+
+    void MaxCarCountReached()
+    {
+        if (ScoreManager.allAutoObjects.Count >= ScoreManager.maxCarCount)
+        {
+            ScoreManager.doomsDayTimer = 0;
         }
     }
 }

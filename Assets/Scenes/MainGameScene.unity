@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doomsDayTimerStarTime: 300
+  maxCarCount: 7
   coneCarDestroyTimer: 5
   carDestroyTimeBonus: 100
   conePrice: 1

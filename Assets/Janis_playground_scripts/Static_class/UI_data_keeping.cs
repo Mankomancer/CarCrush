@@ -17,6 +17,7 @@ public static class ScoreManager
     public static List<GameObject> allOilObjects = new List<GameObject>();
     public static bool isPaused;
     public static bool carColsisionSound = false;
+    public static int maxCarCount = 10;
 
     // This is a static method that adds points to the score
     public static void AddScore(int points)
