@@ -36,6 +36,7 @@ public class RandomMovement : MonoBehaviour
     private float boostTime;    //needed for rock speed boost
     private bool boosting;
     private bool isInMarket; //neļauj iznicināt konusam mašīnu gadījumā ja cenšās ienest mašīnu marketā
+    public bool marketToDestroy = false;
     
     void Start()
     {
@@ -51,13 +52,13 @@ public class RandomMovement : MonoBehaviour
     {
         
         timeLeft -= Time.deltaTime;
-        if (timeLeft <0)
+        if (timeLeft <0 && this.GetComponent<NavMeshAgent>().speed>0)
         {   
             timeLeft = 4f;//every 4 seconds check nearby Oil and cars, doing that so performance wouldnt suffer that much
             ObjectFinder();
         }
 
-        if (boosting){
+        if (boosting && this.GetComponent<NavMeshAgent>().speed>0){
             boostTime+=Time.deltaTime;
             if (boostTime>5){
                 this.GetComponent<NavMeshAgent>().speed = 10f;
@@ -65,33 +66,35 @@ public class RandomMovement : MonoBehaviour
                 boostTime = 0;
             }
         }
-        switch (canSplit)
-        {
-            case false:
-                if (nearestOilDistance <= rangeSmallVander && nearestOilObject != null)
-                {
-                    agent.ResetPath();
-                    agent.destination = nearestOilObject.transform.position;
-                }
-                break;
-            case true:
-                if (nearestAutoDistance <= rangeSmallVander && nearestAutoObject?.GetComponent<RandomMovement>()?.canSplit == true)
-                {
-                    agent.ResetPath();
-                    agent.SetDestination(nearestAutoObject.transform.position);
-                }
-                break;
-        }
-
-        // Use the var keyword to declare local variables
-        if (agent?.remainingDistance <= agent?.stoppingDistance) //done with path
-        {
-            var point = Vector3.zero;
-            if (RandomPoint(centrePoint.position, rangeVander, out point)) //pass in our centre point and radius of area
+        if (this.GetComponent<NavMeshAgent>().speed>0){
+            switch (canSplit)
             {
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
-                agent.ResetPath();
-                agent.SetDestination(point);
+                case false:
+                    if (nearestOilDistance <= rangeSmallVander && nearestOilObject != null)
+                    {
+                        agent.ResetPath();
+                        agent.destination = nearestOilObject.transform.position;
+                    }
+                    break;
+                case true:
+                    if (nearestAutoDistance <= rangeSmallVander && nearestAutoObject?.GetComponent<RandomMovement>()?.canSplit == true && this.GetComponent<NavMeshAgent>().enabled)
+                    {
+                        agent.ResetPath();
+                        agent.SetDestination(nearestAutoObject.transform.position);
+                    }
+                    break;
+            }
+
+            // Use the var keyword to declare local variables
+            if (agent?.remainingDistance <= agent?.stoppingDistance) //done with path
+            {
+                var point = Vector3.zero;
+                if (RandomPoint(centrePoint.position, rangeVander, out point)) //pass in our centre point and radius of area
+                {
+                    Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
+                    agent.ResetPath();
+                    agent.SetDestination(point);
+                }
             }
         }
     }
@@ -177,6 +180,10 @@ public class RandomMovement : MonoBehaviour
                 ScoreManager.allAutoObjects.Add(spawn); // adds newly spawned car to a list
             }
         }
+        if (marketToDestroy && other.tag=="Auto "){
+            marketToDestroy=false;
+            this.GetComponent<NavMeshAgent>().speed=10f;
+        }
 
         if (other.tag=="Oil" && !canSplit)
         {
@@ -192,6 +199,7 @@ public class RandomMovement : MonoBehaviour
         if (other.tag=="Rock"){
             boosting = true;
             boostTime = 0;
+            marketToDestroy=false;
             this.GetComponent<NavMeshAgent>().speed = 15f;
         }
 
@@ -205,6 +213,8 @@ public class RandomMovement : MonoBehaviour
             spawn = Instantiate (conePrefab, coneSpawn, UnityEngine.Quaternion.identity);
             GameObject.FindGameObjectWithTag("Player").GetComponent<Object_pick_up>().boughtCone=false;
             ScoreManager.allAutoObjects.Remove(this.gameObject);
+            marketToDestroy = true;
+            this.GetComponent<NavMeshAgent>().speed=0;
             StartCoroutine(DelayedDestroy(gameObject));
         }
 
@@ -232,7 +242,9 @@ public class RandomMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(ScoreManager.CarDestroyTime);
         ScoreManager.doomsDayTimer += ScoreManager.carDestroyBonuseTime;
-        Destroy(gameobject);
+        if (marketToDestroy){
+            Destroy(gameobject);
+        }
     }
 
     public void CarExitFromMarket(Collider other)
