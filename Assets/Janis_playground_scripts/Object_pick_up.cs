@@ -28,11 +28,12 @@ public class Object_pick_up : MonoBehaviour
         if (hold_object)
         {//objekta nešanas funkcija
             var newZ = item_hold_spot.transform.position.z - carHoldZ_offset;
-           if(hold_object.tag=="Auto")
             newZ = item_hold_spot.transform.position.z + carHoldZ_offset;
             hold_object.transform.position = new Vector3(item_hold_spot.transform.position.x,hold_object.transform.position.y,newZ);
-            this.GetComponent<Player_movement>().boosting=true;
-            this.GetComponent<Player_movement>().playerSpeed=20;
+            if(hold_object.tag=="Auto"){
+                this.GetComponent<Player_movement>().boosting=true;
+                this.GetComponent<Player_movement>().playerSpeed=20;
+           }
         }
     }
 
