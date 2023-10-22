@@ -41,6 +41,7 @@ public class Game_controll_script : MonoBehaviour
         ScoreManager.isPaused = false;
         ScoreManager.conePrice = conePrice;
         ScoreManager.CarDestroyTime = coneCarDestroyTimer;
+        this.GetComponent<Lose_script>().loseUi.SetActive(false);
         Market.SetBarrelPrice(barrelPrice);
         Market.SetBarrelScore(barrelScore);
         uiText.DoomsDayTimerSet(doomsDayTimerStarTime);

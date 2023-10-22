@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lose_script : MonoBehaviour
 {
-    [SerializeField] private GameObject loseUi;
+    [SerializeField] public GameObject loseUi;
     // Start is called before the first frame update
     void Start()
     {

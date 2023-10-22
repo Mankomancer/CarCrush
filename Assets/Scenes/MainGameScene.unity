@@ -379,11 +379,11 @@ MonoBehaviour:
   audioController: {fileID: 668891551}
   barel: {fileID: 1317434232}
   onesSpawnTime: {x: 100, y: 1.5}
-  twoSpawnTime: {x: 200, y: 1.5}
-  threeSpawnTime: {x: 300, y: 1}
-  fourSpawnTime: {x: 400, y: 0.75}
-  fiveSpawnTime: {x: 500, y: 0.5}
-  sixSpawnTime: {x: 600, y: 0.3}
+  twoSpawnTime: {x: 150, y: 1.2}
+  threeSpawnTime: {x: 200, y: 1}
+  fourSpawnTime: {x: 250, y: 0.75}
+  fiveSpawnTime: {x: 300, y: 0.5}
+  sixSpawnTime: {x: 350, y: 0.3}
 --- !u!4 &92320624
 Transform:
   m_ObjectHideFlags: 0
@@ -7432,6 +7432,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1841106267221253518, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
+      propertyPath: m_Radius
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 2247529388167162109, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -7486,15 +7490,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7157167581377244381, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7157167581377244381, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 7157167581377244381, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386323880545443580, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
+      propertyPath: playerSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386323880545443580, guid: a2d57f6705cb49e4c9cd7526d16f9eca, type: 3}
+      propertyPath: playerSpeed_default
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7552,6 +7564,14 @@ PrefabInstance:
     - target: {fileID: 4200095363249537785, guid: e8c5f9c2223807b48b33397f2f196be1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698759554742818691, guid: e8c5f9c2223807b48b33397f2f196be1, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698759554742818691, guid: e8c5f9c2223807b48b33397f2f196be1, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 7503329713933385928, guid: e8c5f9c2223807b48b33397f2f196be1, type: 3}
       propertyPath: m_Name

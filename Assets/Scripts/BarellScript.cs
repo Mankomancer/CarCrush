@@ -11,14 +11,14 @@ public class BarellScript : MonoBehaviour
     public float spawnTimer =3;
 
     private int a = 100;
-    private int b = 200;
-    private int c = 300;
-    private int d = 400;
-    private int e = 500;
-    private int f = 600;
+    private int b = 150;
+    private int c = 200;
+    private int d = 250;
+    private int e = 300;
+    private int f = 350;
     
     private float a_time = 1.5f;
-    private float b_time = 1.5f;
+    private float b_time = 1.2f;
     private float c_time = 1f;
     private float d_time = 0.75f;
     private float e_time = 0.5f;
