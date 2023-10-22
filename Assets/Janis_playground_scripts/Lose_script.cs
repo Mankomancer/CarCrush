@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,11 @@ public class Lose_script : MonoBehaviour
     [SerializeField] public GameObject loseUi;
     // Start is called before the first frame update
     void Start()
+    {
+        loseUi.SetActive(false);
+    }
+
+    private void Awake()
     {
         loseUi.SetActive(false);
     }
