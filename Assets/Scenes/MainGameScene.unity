@@ -5675,6 +5675,10 @@ PrefabInstance:
       propertyPath: parentObject
       value: 
       objectReference: {fileID: 2050473237}
+    - target: {fileID: -3656398982693819862, guid: 120f7b6c29b6af149b0d884defb364c2, type: 3}
+      propertyPath: time_splitEffect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4401682393655452949, guid: 120f7b6c29b6af149b0d884defb364c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.9

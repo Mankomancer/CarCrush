@@ -38,11 +38,15 @@ public class RandomMovement : MonoBehaviour
     private bool isInMarket; //neļauj iznicināt konusam mašīnu gadījumā ja cenšās ienest mašīnu marketā
     public bool marketToDestroy = false;
 
-    [Header("konusu enable")] [SerializeField]
-    private GameObject konuss;
+    [Header("konusu enable")]
+    [SerializeField] private GameObject konuss;
+    [Header("Split_effect enable")] 
+    [SerializeField] private GameObject splitEffect;
+    public float time_splitEffect = 2f;
     
     void Start()
     {
+        splitEffect.SetActive(false);
         konuss.SetActive(false);
         isInMarket = false;
         agent = GetComponent<NavMeshAgent>();
@@ -185,6 +189,7 @@ public class RandomMovement : MonoBehaviour
                 if (!ScoreManager.carColsisionSound)
                 {
                     ScoreManager.carColsisionSound = true;
+                    StartCoroutine(EnableSpllitEffect());
                 }
             }
         }
@@ -260,6 +265,13 @@ public class RandomMovement : MonoBehaviour
             Destroy(gameobject);
             ScoreManager.familySound = true;
         } konuss.SetActive(false);
+    }
+
+    IEnumerator EnableSpllitEffect()
+    {
+        splitEffect.SetActive(true);
+        yield return new WaitForSeconds(time_splitEffect);
+        splitEffect.SetActive(false);
     }
 
     public void CarExitFromMarket(Collider other)
