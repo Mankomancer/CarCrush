@@ -19,9 +19,20 @@ public class Game_controll_script : MonoBehaviour
     [SerializeField] private Market_csript Market;
     [SerializeField] private AudioClip backGroundMusic;
     [SerializeField] private AudioSource audioController;
+
+    [Header("Barrel spawn score + time")] 
+    [SerializeField] private BarellScript barel;
+    [SerializeField] private Vector2 onesSpawnTime;
+    [SerializeField] private Vector2 twoSpawnTime;
+    [SerializeField] private Vector2 threeSpawnTime;
+    [SerializeField] private Vector2 fourSpawnTime;
+    [SerializeField] private Vector2 fiveSpawnTime;
+    [SerializeField] private Vector2 sixSpawnTime;
+
     // Start is called before the first frame update
     void Start()
     {
+        barel.ScoreTimeSetter(onesSpawnTime,twoSpawnTime,threeSpawnTime,fourSpawnTime,fiveSpawnTime,sixSpawnTime);
         ScoreManager.maxCarCount = maxCarCount;
         ScoreManager.carDestroyBonuseTime = carDestroyTimeBonus;
         audioController.clip = backGroundMusic;

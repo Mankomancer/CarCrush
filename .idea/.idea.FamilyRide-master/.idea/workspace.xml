@@ -49,7 +49,6 @@
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/pick_up_detector.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/item_slot_image.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shop_script.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BarellScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CarSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/UI_handler.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Score_tester_DoNotUse.cs" />
@@ -61,12 +60,13 @@
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Car_colider_rotation_fix.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Object_pick_up.cs" />
         <option value="$PROJECT_DIR$/Assets/Controller_settings/Animation_controller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" />
         <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Lose_script.cs" />
-        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Game_controll_script.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Rock_movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Static_class/UI_data_keeping.cs" />
         <option value="$PROJECT_DIR$/Assets/Controller_settings/Audio_controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RandomMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Janis_playground_scripts/Game_controll_script.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BarellScript.cs" />
       </list>
     </option>
   </component>
@@ -113,6 +113,7 @@
       <workItem from="1697646925613" duration="27440000" />
       <workItem from="1697830882880" duration="7812000" />
       <workItem from="1697878776549" duration="8830000" />
+      <workItem from="1697958744119" duration="1210000" />
     </task>
     <servers />
   </component>

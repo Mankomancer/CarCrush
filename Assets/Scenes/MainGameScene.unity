@@ -315,6 +315,13 @@ MonoBehaviour:
   Market: {fileID: 1460634513}
   backGroundMusic: {fileID: 8300000, guid: 35438adba13cb1a4292c22f407039514, type: 3}
   audioController: {fileID: 668891551}
+  barel: {fileID: 1317434232}
+  onesSpawnTime: {x: 100, y: 8}
+  twoSpawnTime: {x: 200, y: 7}
+  threeSpawnTime: {x: 300, y: 6}
+  fourSpawnTime: {x: 500, y: 5}
+  fiveSpawnTime: {x: 700, y: 4}
+  sixSpawnTime: {x: 1000, y: 3}
 --- !u!4 &92320624
 Transform:
   m_ObjectHideFlags: 0
