@@ -37,9 +37,13 @@ public class RandomMovement : MonoBehaviour
     private bool boosting;
     private bool isInMarket; //neļauj iznicināt konusam mašīnu gadījumā ja cenšās ienest mašīnu marketā
     public bool marketToDestroy = false;
+
+    [Header("konusu enable")] [SerializeField]
+    private GameObject konuss;
     
     void Start()
     {
+        konuss.SetActive(false);
         isInMarket = false;
         agent = GetComponent<NavMeshAgent>();
         transform.rotation = UnityEngine.Quaternion.Euler(0,0,0);
@@ -219,6 +223,7 @@ public class RandomMovement : MonoBehaviour
             ScoreManager.allAutoObjects.Remove(this.gameObject);
             marketToDestroy = true;
             this.GetComponent<NavMeshAgent>().speed=0;
+            konuss.SetActive(true);
             StartCoroutine(DelayedDestroy(gameObject));
         }
 
@@ -254,7 +259,7 @@ public class RandomMovement : MonoBehaviour
             }
             Destroy(gameobject);
             ScoreManager.familySound = true;
-        }
+        } konuss.SetActive(false);
     }
 
     public void CarExitFromMarket(Collider other)
