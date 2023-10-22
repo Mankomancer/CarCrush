@@ -223,7 +223,7 @@ public class RandomMovement : MonoBehaviour
             ScoreManager.itemSlot = null;
             Destroy(other.gameObject);
             GameObject spawn;
-            UnityEngine.Vector3 coneSpawn = new UnityEngine.Vector3(-40f, 1.4f, 2.7f);
+            UnityEngine.Vector3 coneSpawn = new UnityEngine.Vector3(-26f, 1.4f, 2.7f);
             spawn = Instantiate (conePrefab, coneSpawn, UnityEngine.Quaternion.identity);
             GameObject.FindGameObjectWithTag("Player").GetComponent<Object_pick_up>().boughtCone=false;
             ScoreManager.allAutoObjects.Remove(this.gameObject);

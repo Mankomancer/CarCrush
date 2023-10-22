@@ -49,11 +49,11 @@ public class Object_pick_up : MonoBehaviour
             {   //in case player already bought cone, but dropped it somewhere else
                 if (otherRigidbody != null)
                 {
-                    ScoreManager.InsertItem(other.transform.parent.gameObject);
+                    ScoreManager.InsertItem(other?.transform?.parent?.gameObject);
                 }
                 else
                 {
-                    ScoreManager.InsertItem(other.gameObject);
+                    ScoreManager.InsertItem(other?.gameObject);
                 }
 
                 hold_object = ScoreManager.ItemRecall();

@@ -35,7 +35,7 @@ public class Player_movement : MonoBehaviour
 
         if (boosting){
             boostTime+=Time.deltaTime;
-            if (boostTime>2){
+            if (boostTime>1){
                 playerSpeed = playerSpeed_default;
                 boosting = false;
                 boostTime = 0;
