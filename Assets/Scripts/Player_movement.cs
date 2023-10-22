@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Player_movement : MonoBehaviour
 {
-    public float playerSpeed_default = 15f;
-    public float playerSpeed = 15f;
+    public float playerSpeed_default = 12f;
+    public float playerSpeed = 12f;
     private float horizonatInput;
     private float forwardInput;
     private float boostTime;
-    private bool boosting;
+    public bool boosting;
 
     public float minX = -49f;
     public float maxX = 49f;
@@ -35,7 +35,7 @@ public class Player_movement : MonoBehaviour
 
         if (boosting){
             boostTime+=Time.deltaTime;
-            if (boostTime>5){
+            if (boostTime>2){
                 playerSpeed = playerSpeed_default;
                 boosting = false;
                 boostTime = 0;
@@ -47,7 +47,7 @@ public class Player_movement : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.tag=="Shop"){
             boosting = true;
-            playerSpeed = 25f;
+            playerSpeed = 20f;
         }
 
         if (other.tag=="Rock"){

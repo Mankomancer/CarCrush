@@ -54,6 +54,7 @@ public class RandomMovement : MonoBehaviour
         nearestAutoObject = null;
         FirstTimeItemAddToList("Oil",ScoreManager.allOilObjects);
         FirstTimeItemAddToList("Auto",ScoreManager.allAutoObjects);
+        timeLeft = 0;
     }
 
     void Update()
@@ -195,7 +196,7 @@ public class RandomMovement : MonoBehaviour
         }
         if (marketToDestroy && other.tag=="Auto "){
             marketToDestroy=false;
-            this.GetComponent<NavMeshAgent>().speed=10f;
+            this.GetComponent<NavMeshAgent>().speed=8f;
         }
 
         if (other.tag=="Oil" && !canSplit)

@@ -9,15 +9,15 @@ public static class ScoreManager
     public static float doomsDayTimer =0;
     public static int score = 0;
     public static int money = 0;
-    public static float carDestroyBonuseTime = 10f;
-    public static float CarDestroyTime = 5f;
-    public static int conePrice = 10;
+    public static float carDestroyBonuseTime = 7f;
+    public static float CarDestroyTime = 4f;
+    public static int conePrice = 15;
     public static GameObject itemSlot ;
     public static List<GameObject> allAutoObjects = new List<GameObject>();
     public static List<GameObject> allOilObjects = new List<GameObject>();
     public static bool isPaused;
     public static bool carColsisionSound = false;
-    public static int maxCarCount = 10;
+    public static int maxCarCount = 50;
     public static bool playerSplat = false;
     public static bool familySound = false;
 

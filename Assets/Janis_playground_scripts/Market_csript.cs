@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Market_csript : MonoBehaviour
 {
-    private int barrelScore = 50;
-    private int barrelCost = 20;
+    private int barrelScore = 25;
+    private int barrelCost = 15;
     // Start is called before the first frame update
     void Start()
     {

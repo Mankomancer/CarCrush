@@ -7,22 +7,22 @@ public class BarellScript : MonoBehaviour
 {
     [SerializeField] private GameObject parentObject; // lai organizetu smuki visus barel objektus
     public GameObject barellPrefab;
-    public float timeLeft = 5;
-    public float spawnTimer =10;
+    public float timeLeft = 3;
+    public float spawnTimer =3;
 
     private int a = 100;
     private int b = 200;
     private int c = 300;
-    private int d = 500;
-    private int e = 700;
-    private int f = 1000;
+    private int d = 400;
+    private int e = 500;
+    private int f = 600;
     
-    private float a_time = 8f;
-    private float b_time = 7f;
-    private float c_time = 6f;
-    private float d_time = 5f;
-    private float e_time = 4f;
-    private float f_time = 3f;
+    private float a_time = 1.5f;
+    private float b_time = 1.5f;
+    private float c_time = 1f;
+    private float d_time = 0.75f;
+    private float e_time = 0.5f;
+    private float f_time = 0.3f;
     // Start is called before the first frame update
     void Start()
     {
